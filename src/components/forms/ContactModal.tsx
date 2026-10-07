@@ -84,12 +84,8 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
             <input required name="lastName" placeholder="Last Name" />
           </label>
           <label className="contact-modal-full">
-            Business email address <b>*</b>
-            <input required type="email" name="email" placeholder="Business email address" />
-          </label>
-          <label>
-            Job title <b>*</b>
-            <input required name="jobTitle" placeholder="e.g. Lead Strategist" />
+            Email <b>*</b>
+            <input required type="email" name="email" placeholder="Email" />
           </label>
           <label>
             Industry <b>*</b>
@@ -100,8 +96,12 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
             <input required name="company" placeholder="Company name" />
           </label>
           <label>
-            Location <b>*</b>
-            <input required name="location" placeholder="Location" />
+            Country <b>*</b>
+            <input required name="country" placeholder="Country" />
+          </label>
+          <label>
+            State <b>*</b>
+            <input required name="state" placeholder="State" />
           </label>
           <label className="contact-modal-full">
             Tell us more about your needs. <b>*</b>
