@@ -1,8 +1,9 @@
 {
-  "title": "NexGen Int",
-  "description": "Delivers a premium, responsive homepage showcasing market research services with clear navigation, compelling insights, and client credibility for enterprise users.",
+  "title": "NexGen Market Research Services Pvt. Ltd.",
+  "description": "Integrated market research, consumer insights and data intelligence across India and international markets.",
+  "language": "en",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,

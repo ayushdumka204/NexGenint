@@ -1,30 +1,44 @@
-import ClientCarousel from "../components/home/ClientCarousel"
-import CustomCursor from "../components/home/CustomCursor"
-import DecisionCta from "../components/home/DecisionCta"
-import Hero from "../components/home/Hero"
-import HumanUnderstanding from "../components/home/HumanUnderstanding"
-import ResearchSolutions from "../components/home/ResearchSolutions"
-import Footer from "../components/layout/Footer"
-import Header from "../components/layout/Header"
-import ScrollToTop from "../components/ui/ScrollToTop"
-import useScrollReveal from "../hooks/useScrollReveal"
+import { useEffect } from "react"
+import HomeHero from "@/components/home/HomeHero"
+import {
+  EditorialStatement,
+  IndiaQuality,
+  KnowledgePreview,
+  MethodologyPreview,
+  ResearchInAction,
+  ResearchSupport,
+  SolutionsPreview,
+  TrustStrip,
+} from "@/components/home/HomeSections"
+import PageCTA from "@/components/content/PageCTA"
+import ClientLogoRail from "@/components/content/ClientLogoRail"
+import { setPageMetadata } from "@/lib/seo"
+import ResearchQuestions from "@/components/home/ResearchQuestions"
 
 export default function HomePage() {
-  useScrollReveal()
-
+  useEffect(
+    () =>
+      setPageMetadata(
+        "Market Research Services in India",
+        "NexGen provides qualitative and quantitative market research, consumer insights, PAN-India fieldwork and academic research support in India and international markets.",
+        "/",
+      ),
+    [],
+  )
   return (
-    <>
-      <CustomCursor />
-      <Header />
-      <main>
-        <Hero />
-        <ClientCarousel />
-        <HumanUnderstanding />
-        <ResearchSolutions />
-        <DecisionCta />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </>
+    <main>
+      <HomeHero />
+      <TrustStrip />
+      <ClientLogoRail />
+      <EditorialStatement />
+      <SolutionsPreview />
+      <MethodologyPreview />
+      <ResearchInAction />
+      <ResearchSupport />
+      <IndiaQuality />
+      <KnowledgePreview />
+      <ResearchQuestions />
+      <PageCTA />
+    </main>
   )
 }

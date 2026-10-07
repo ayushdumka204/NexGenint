@@ -1,157 +1,83 @@
-import Arrow from "../ui/Arrow"
-import Brand from "../ui/Brand"
+import { Link } from "react-router"
+import ButtonLink from "@/components/ui/ButtonLink"
+import LanguageSelector from "@/components/ui/LanguageSelector"
+import { navigation } from "@/data/navigation"
+import SocialIcons from "@/components/ui/SocialIcons"
 
-const footerColumns = [
-  {
-    title: "Solutions",
-    links: [
-      "Consumer Insights",
-      "Brand Research",
-      "Communication Research",
-      "Product & Innovation",
-      "Market Assessment",
-      "Customer Experience",
-      "Pricing",
-      "B2B",
-      "Retail & Shopper",
-      "Census",
-      "Social Research",
-    ],
-  },
-  {
-    title: "Methodologies",
-    links: [
-      "Quantitative",
-      "Qualitative",
-      "Mixed Methods",
-      "CAPI/F2F",
-      "CATI",
-      "CAWI",
-      "FGDs",
-      "IDIs",
-      "Ethnography",
-      "CLT",
-      "IHUT",
-      "Mystery Shopping",
-      "Secondary Research",
-    ],
-  },
-  {
-    title: "Industries",
-    links: [
-      "FMCG",
-      "Healthcare",
-      "Automotive",
-      "BFSI",
-      "Retail & E-commerce",
-      "Technology",
-      "Consumer Durables",
-      "Education",
-      "Manufacturing/B2B",
-      "Agriculture",
-      "Real Estate",
-      "Hospitality",
-      "Public Sector",
-    ],
-  },
-  {
-    title: "Data & Fieldwork",
-    links: [
-      "Data Collection",
-      "Recruitment",
-      "Survey Programming",
-      "Translation",
-      "Transcription",
-      "Data Processing",
-    ],
-  },
-  {
-    title: "Academic Research",
-    links: [
-      "Academic Data Collection",
-      "Longitudinal",
-      "Experimental",
-      "Multi-Wave",
-      "Quantitative",
-      "Qualitative",
-    ],
-  },
-  {
-    title: "Resources",
-    links: ["Success Stories", "Insights", "Reports", "Research Guides"],
-  },
-  {
-    title: "Company",
-    links: [
-      "About",
-      "Leadership",
-      "Why NexGen",
-      "PAN-India Network",
-      "Quality",
-      "Careers",
-    ],
-  },
-]
-
-const philosophy = [
-  "Research",
-  "Understanding",
-  "Insight",
-  "Decision",
-  "Growth",
+const contactItems = [
+  { label: "Contact", path: "/contact" },
+  { label: "Talk to an Expert", path: "/contact" },
+  { label: "Request Proposal", path: "/request-proposal" },
 ]
 
 export default function Footer() {
   return (
-    <footer className="footer" id="contact">
-      <div className="footer__top">
-        <div className="footer__statement">
-          <Brand light />
-          <p>Ready to turn a research question into a business advantage?</p>
-          <a
-            className="button button--light interactive"
-            href="mailto:mail@nexgenint.com?subject=Request a Proposal"
-          >
-            Talk to an Expert <Arrow diagonal />
-          </a>
+    <footer className="site-footer">
+      <div className="footer-lead">
+        <div className="footer-mark">
+          <Link to="/" aria-label="NexGen home" className="footer-logo">
+            <img
+              src="/images/nexgen-logo.png"
+              alt="NexGen Market Research Services"
+            />
+          </Link>
+          <p>
+            Human Understanding.
+            <br />
+            Reliable Data.
+            <br />
+            <span>Smarter Decisions.</span>
+          </p>
+          <small>
+            Integrated market research, consumer insights and data intelligence
+            across India and international markets.
+          </small>
         </div>
-        <div className="footer__links">
-          {footerColumns.map((column) => (
-            <div className="footer-column" key={column.title}>
-              <h3>{column.title}</h3>
-              {column.links.map((item) => (
-                <a href="#top" key={item}>
-                  {item}
-                </a>
-              ))}
-            </div>
-          ))}
-          <div className="footer-column footer-contact">
-            <h3>Contact</h3>
-            <a href="mailto:mail@nexgenint.com">Talk to an Expert</a>
-            <a href="mailto:mail@nexgenint.com?subject=Request a Proposal">
-              Request Proposal
-            </a>
-            <div>
-              <a href="mailto:mail@nexgenint.com">mail@nexgenint.com</a>
-              <a href="tel:+919873177449">+91-98731 77449</a>
-            </div>
+        <div>
+          <span className="annotation">Begin with a question</span>
+          <ButtonLink href="/request-proposal" variant="light">
+            Start a research project
+          </ButtonLink>
+          <LanguageSelector />
+        </div>
+      </div>
+
+      <div className="footer-links footer-navigation">
+        {navigation.map((group) => (
+          <div key={group.label}>
+            <strong>{group.label}</strong>
+            {group.items.map((item) => (
+              <Link key={item.path} to={item.path}>
+                {item.label}
+              </Link>
+            ))}
           </div>
+        ))}
+        <div>
+          <strong>Contact</strong>
+          {contactItems.map((item) => (
+            <Link key={item.label} to={item.path}>
+              {item.label}
+            </Link>
+          ))}
+          <a href="mailto:mail@nexgenint.com">mail@nexgenint.com</a>
+          <a href="tel:+919873177449">+91-98731 77449</a>
         </div>
       </div>
-      <div className="footer__philosophy" aria-label="Our philosophy">
-        {philosophy.map((word, index) => (
-          <span key={word}>
-            {word}
-            {index < philosophy.length - 1 && <i>→</i>}
-          </span>
-        ))}
+
+      <div className="footer-connect">
+        <div>
+          <span className="annotation">Our research philosophy</span>
+          <p>Research → Understanding → Insight → Decision → Growth</p>
+        </div>
+        <SocialIcons />
       </div>
-      <div className="footer__bottom">
+
+      <div className="footer-bottom">
         <span>
           © {new Date().getFullYear()} NexGen Market Research Services Pvt. Ltd.
         </span>
-        <span>India · International</span>
+        <span>Privacy Policy &nbsp;·&nbsp; Terms</span>
       </div>
     </footer>
   )

@@ -1,252 +1,209 @@
-import { useEffect, useState } from "react"
-import Arrow from "../ui/Arrow"
-import Brand from "../ui/Brand"
-import LanguageSelector from "../ui/LanguageSelector"
-
-type MenuItem = {
-  label: string
-  href: string
-  featured?: boolean
-}
-
-const link = (label: string, href: string, featured = false): MenuItem => ({
-  label,
-  href,
-  featured,
-})
-
-const megaMenus: Record<string, MenuItem[]> = {
-  Solutions: [
-    link("Consumer Insights", "#solutions", true),
-    link("Brand Research", "#solutions"),
-    link("Communication Research", "#solutions"),
-    link("Product & Innovation", "#solutions"),
-    link("Market Assessment", "#solutions"),
-    link("Customer Experience", "#solutions"),
-    link("Pricing", "#solutions"),
-    link("B2B", "#solutions"),
-    link("Retail & Shopper", "#solutions"),
-    link("Census", "#solutions"),
-    link("Social Research", "#solutions"),
-  ],
-  Methodologies: [
-    link("Quantitative", "#methodologies", true),
-    link("Qualitative", "#methodologies"),
-    link("Mixed Methods", "#methodologies"),
-    link("CAPI/F2F", "#methodologies"),
-    link("CATI", "#methodologies"),
-    link("CAWI", "#methodologies"),
-    link("FGDs", "#methodologies"),
-    link("IDIs", "#methodologies"),
-    link("Ethnography", "#methodologies"),
-    link("CLT", "#methodologies"),
-    link("IHUT", "#methodologies"),
-    link("Mystery Shopping", "#methodologies"),
-    link("Secondary Research", "#methodologies"),
-  ],
-  Industries: [
-    link("FMCG", "#industries", true),
-    link("Healthcare", "#industries"),
-    link("Automotive", "#industries"),
-    link("BFSI", "#industries"),
-    link("Retail & E-commerce", "#industries"),
-    link("Technology", "#industries"),
-    link("Consumer Durables", "#industries"),
-    link("Education", "#industries"),
-    link("Manufacturing/B2B", "#industries"),
-    link("Agriculture", "#industries"),
-    link("Real Estate", "#industries"),
-    link("Hospitality", "#industries"),
-    link("Public Sector", "#industries"),
-  ],
-  "Data & Fieldwork": [
-    link("Data Collection", "#data-and-fieldwork", true),
-    link("Recruitment", "#data-and-fieldwork"),
-    link("Survey Programming", "#data-and-fieldwork"),
-    link("Translation", "#data-and-fieldwork"),
-    link("Transcription", "#data-and-fieldwork"),
-    link("Data Processing", "#data-and-fieldwork"),
-  ],
-  "Academic Research": [
-    link("Academic Data Collection", "#academic-research", true),
-    link("Longitudinal", "#academic-research"),
-    link("Experimental", "#academic-research"),
-    link("Multi-Wave", "#academic-research"),
-    link("Quantitative", "#academic-research"),
-    link("Qualitative", "#academic-research"),
-  ],
-  Resources: [
-    link("Success Stories", "#resources", true),
-    link("Insights", "#resources"),
-    link("Reports", "#resources"),
-    link("Research Guides", "#resources"),
-  ],
-  Company: [
-    link("About", "#company", true),
-    link("Leadership", "#company"),
-    link("Why NexGen", "#company"),
-    link("PAN-India Network", "#company"),
-    link("Quality", "#company"),
-    link("Careers", "#company"),
-  ],
-  Contact: [
-    link("Talk to an Expert", "mailto:mail@nexgenint.com", true),
-    link(
-      "Request Proposal",
-      "mailto:mail@nexgenint.com?subject=Request a Proposal",
-    ),
-  ],
-}
-
-const navItems = Object.keys(megaMenus)
-
-function getSectionHref(item: string) {
-  if (item === "Contact") return "/contact"
-  const section = `#${item.toLowerCase().replaceAll(" ", "-").replace("&", "and")}`
-  return window.location.pathname === "/contact" ? `/${section}` : section
-}
+import { useEffect, useRef, useState } from "react"
+import { Link, useLocation } from "react-router"
+import { navigation } from "@/data/navigation"
+import ButtonLink from "@/components/ui/ButtonLink"
+import {
+  ArrowIcon,
+  ChevronIcon,
+  MenuIcon,
+  PlusIcon,
+} from "@/components/ui/Icons"
+import LanguageSelector from "@/components/ui/LanguageSelector"
+import SocialIcons from "@/components/ui/SocialIcons"
+import ContactModal from "@/components/forms/ContactModal"
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [active, setActive] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [openMenu, setOpenMenu] = useState<string | null>(null)
-  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null)
-  const isContactPage = window.location.pathname === "/contact"
-
+  const [scrolled, setScrolled] = useState(false)
+  const [contactOpen, setContactOpen] = useState(false)
+  const location = useLocation()
+  const headerRef = useRef<HTMLElement>(null)
+  const mobileToggleRef = useRef<HTMLButtonElement>(null)
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
+    setActive(null)
+    setMobileOpen(false)
+  }, [location.pathname])
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 64)
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    return () => window.removeEventListener("scroll", update)
   }, [])
-
-  useEffect(() => {
-    document.body.classList.toggle("menu-open", mobileOpen)
-    return () => document.body.classList.remove("menu-open")
-  }, [mobileOpen])
-
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key !== "Escape") return
-      setOpenMenu(null)
-      setOpenMobileMenu(null)
-      setMobileOpen(false)
-    }
-    window.addEventListener("keydown", onKeyDown)
-    return () => window.removeEventListener("keydown", onKeyDown)
-  }, [])
+  const activeGroup = navigation.find((group) => group.label === active)
 
   return (
     <header
-      className={`site-header ${scrolled ? "site-header--scrolled" : ""}`}
+      ref={headerRef}
+      className={`site-header${scrolled ? " is-scrolled" : ""}`}
+      onMouseLeave={() => setActive(null)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setActive(null)
+      }}
+      onKeyDown={(event) => {
+        if (event.key !== "Escape") return
+        if (mobileOpen) mobileToggleRef.current?.focus()
+        else if (contactOpen) setContactOpen(false)
+        else if (active)
+          headerRef.current
+            ?.querySelector<HTMLButtonElement>(".nav-item.active")
+            ?.focus()
+        setActive(null)
+        setMobileOpen(false)
+      }}
     >
-      <div className="nav-shell">
-        <Brand />
+      <div className="header-utility">
+        <div>
+          <nav aria-label="Contact and utility links">
+            <a href="mailto:mail@nexgenint.com">mail@nexgenint.com</a>
+            <a href="tel:+919873177449">+91-98731 77449</a>
+          </nav>
+          <LanguageSelector placement="utility" />
+          <SocialIcons />
+        </div>
+      </div>
+      <div
+        className="header-inner"
+        onMouseLeave={(event) => {
+          const nextTarget = event.relatedTarget as Node | null
+          if (!nextTarget || !headerRef.current?.querySelector(".mega-menu")?.contains(nextTarget))
+            setActive(null)
+        }}
+      >
+        <Link to="/" className="wordmark" aria-label="NexGen home">
+          <img src="/images/nexgen-logo.png" alt="NexGen" />
+        </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <div
-              className="nav-item"
-              key={item}
-              onMouseEnter={() => setOpenMenu(item)}
-              onMouseLeave={() => setOpenMenu(null)}
+          {navigation.map((group) => (
+            <button
+              key={group.label}
+              className={`nav-item${active === group.label ? " active" : ""}${
+                location.pathname.startsWith(group.path) ? " current" : ""
+              }`}
+              onMouseEnter={() => setActive(group.label)}
+              onFocus={() => setActive(group.label)}
+              onClick={() => setActive(group.label)}
+              aria-expanded={active === group.label}
+              aria-controls={
+                active === group.label ? "nexgen-mega-menu" : undefined
+              }
             >
-              <a
-                className="nav-link interactive"
-                href={getSectionHref(item)}
-                aria-expanded={openMenu === item}
-                onFocus={() => setOpenMenu(item)}
-              >
-                {item}
-                <span className="nav-chevron">⌄</span>
-              </a>
-              <div
-                className={`mega-menu ${
-                  openMenu === item ? "mega-menu--open" : ""
-                }`}
-              >
-                <div className="mega-menu__intro">
-                  <span>Explore {item}</span>
-                  <p>
-                    Focused expertise for complex research questions and better
-                    decisions.
-                  </p>
-                </div>
-                <div className="mega-menu__links">
-                  {megaMenus[item].map((entry) => (
-                    <a
-                      className={entry.featured ? "featured" : ""}
-                      href={
-                        isContactPage && entry.href.startsWith("#")
-                          ? `/${entry.href}`
-                          : entry.href
-                      }
-                      key={entry.label}
-                    >
-                      <span>{entry.label}</span>
-                      <Arrow diagonal />
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
+              {group.label}
+              <ChevronIcon />
+            </button>
           ))}
+          <button
+            type="button"
+            className="nav-item nav-contact"
+            onClick={() => {
+              setActive(null)
+              setContactOpen(true)
+            }}
+            aria-current={location.pathname === "/contact" ? "page" : undefined}
+          >
+            Contact
+          </button>
         </nav>
-        <LanguageSelector />
-        <a className="nav-cta interactive" href="/contact#contact-form">
-          Request a Proposal <Arrow diagonal />
-        </a>
+        <ButtonLink href="/request-proposal">Request proposal</ButtonLink>
         <button
-          className="menu-toggle interactive"
-          type="button"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          ref={mobileToggleRef}
+          className="menu-toggle"
+          onClick={() => setMobileOpen((open) => !open)}
+          aria-label="Toggle navigation"
           aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-controls="nexgen-mobile-menu"
         >
-          <span />
-          <span />
+          <MenuIcon close={mobileOpen} />
         </button>
       </div>
-      <div className={`mobile-menu ${mobileOpen ? "mobile-menu--open" : ""}`}>
-        <div className="mobile-menu__links">
-          {navItems.map((item, index) => {
-            const isOpen = openMobileMenu === item
-            return (
-              <div
-                className={`mobile-nav-group ${
-                  isOpen ? "mobile-nav-group--open" : ""
-                }`}
-                key={item}
-              >
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  onClick={() => setOpenMobileMenu(isOpen ? null : item)}
+
+      {activeGroup && (
+        <div
+          id="nexgen-mega-menu"
+          className="mega-menu"
+          onMouseEnter={() => setActive(activeGroup.label)}
+          onMouseLeave={() => setActive(null)}
+        >
+          <div className="mega-intro">
+            <span className="eyebrow">Explore NexGen</span>
+            <h3>{activeGroup.label}</h3>
+            <p>{activeGroup.description}</p>
+            <Link to={activeGroup.path} className="text-link">
+              View overview <ArrowIcon />
+            </Link>
+          </div>
+          <div className="mega-links">
+            {activeGroup.items.map((item) => (
+              <Link key={item.path} to={item.path} onClick={() => setActive(null)}>
+                {item.label}
+                <ArrowIcon />
+              </Link>
+            ))}
+          </div>
+          <div className="mega-feature">
+            <span className="annotation">Research signal</span>
+            <strong>
+              Evidence is useful only when it changes what you do next.
+            </strong>
+            <div className="mini-path">
+              <i />
+              <i />
+              <i />
+              <i />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {mobileOpen && (
+        <nav
+          id="nexgen-mobile-menu"
+          className="mobile-nav"
+          aria-label="Mobile navigation"
+        >
+          {navigation.map((group) => (
+            <details key={group.label}>
+              <summary>
+                {group.label}
+                <PlusIcon />
+              </summary>
+              <div>
+                <Link
+                  to={group.path}
+                  className="mobile-overview"
+                  onClick={() => setMobileOpen(false)}
                 >
-                  <small>{String(index + 1).padStart(2, "0")}</small>
-                  {item}
-                  <span aria-hidden="true">+</span>
-                </button>
-                <div className="mobile-nav-group__children">
-                  {megaMenus[item].map((entry) => (
-                    <a
-                      href={entry.href}
-                      key={entry.label}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {entry.label}
-                      <Arrow diagonal />
-                    </a>
-                  ))}
-                </div>
+                  Explore {group.label.toLowerCase()} <ArrowIcon />
+                </Link>
+                {group.items.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setMobileOpen(false)}
+                    aria-current={
+                      location.pathname === item.path ? "page" : undefined
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
-            )
-          })}
-        </div>
-        <div className="mobile-menu__contact">
-          <a href="mailto:mail@nexgenint.com">mail@nexgenint.com</a>
-          <a href="tel:+919873177449">+91-98731 77449</a>
-        </div>
-      </div>
+            </details>
+          ))}
+          <button
+            className="mobile-contact-link"
+            type="button"
+            onClick={() => {
+              setMobileOpen(false)
+              setContactOpen(true)
+            }}
+          >
+            Contact
+          </button>
+          <ButtonLink href="/request-proposal">Request proposal</ButtonLink>
+        </nav>
+      )}
+      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
     </header>
   )
 }

@@ -1,38 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 
-const languages = [
-  { code: "en", english: "English", native: "English" },
-  { code: "hi", english: "Hindi", native: "हिन्दी" },
-  { code: "bn", english: "Bengali", native: "বাংলা" },
-  { code: "ta", english: "Tamil", native: "தமிழ்" },
-  { code: "te", english: "Telugu", native: "తెలుగు" },
-  { code: "mr", english: "Marathi", native: "मराठी" },
-  { code: "gu", english: "Gujarati", native: "ગુજરાતી" },
-  { code: "kn", english: "Kannada", native: "ಕನ್ನಡ" },
-  { code: "ml", english: "Malayalam", native: "മലയാളം" },
-  { code: "pa", english: "Punjabi", native: "ਪੰਜਾਬੀ" },
-  { code: "ur", english: "Urdu", native: "اردو" },
-  { code: "as", english: "Assamese", native: "অসমীয়া" },
-  { code: "or", english: "Odia", native: "ଓଡ଼ିଆ" },
-  { code: "ne", english: "Nepali", native: "नेपाली" },
-  { code: "es", english: "Spanish", native: "Español" },
-  { code: "fr", english: "French", native: "Français" },
-  { code: "de", english: "German", native: "Deutsch" },
-  { code: "it", english: "Italian", native: "Italiano" },
-  { code: "pt", english: "Portuguese", native: "Português" },
-  { code: "ar", english: "Arabic", native: "العربية" },
-  { code: "zh-CN", english: "Chinese", native: "中文" },
-  { code: "ja", english: "Japanese", native: "日本語" },
-  { code: "ko", english: "Korean", native: "한국어" },
-  { code: "id", english: "Indonesian", native: "Bahasa Indonesia" },
-  { code: "th", english: "Thai", native: "ไทย" },
-  { code: "vi", english: "Vietnamese", native: "Tiếng Việt" },
-  { code: "ru", english: "Russian", native: "Русский" },
-  { code: "tr", english: "Turkish", native: "Türkçe" },
-  { code: "nl", english: "Dutch", native: "Nederlands" },
-  { code: "pl", english: "Polish", native: "Polski" },
-]
-
 declare global {
   interface Window {
     googleTranslateElementInit?: () => void
@@ -51,119 +18,157 @@ declare global {
   }
 }
 
-function getCurrentLanguage() {
-  const match = document.cookie.match(/(?:^|;\s*)googtrans=\/en\/([^;]+)/)
-  return match?.[1] ?? "en"
-}
+const languages = [
+  ["en", "English", "English"],
+  ["hi", "Hindi", "हिन्दी"],
+  ["bn", "Bengali", "বাংলা"],
+  ["ta", "Tamil", "தமிழ்"],
+  ["te", "Telugu", "తెలుగు"],
+  ["mr", "Marathi", "मराठी"],
+  ["gu", "Gujarati", "ગુજરાતી"],
+  ["kn", "Kannada", "ಕನ್ನಡ"],
+  ["ml", "Malayalam", "മലയാളം"],
+  ["pa", "Punjabi", "ਪੰਜਾਬੀ"],
+  ["ur", "Urdu", "اردو"],
+  ["fr", "French", "Français"],
+  ["de", "German", "Deutsch"],
+  ["es", "Spanish", "Español"],
+  ["it", "Italian", "Italiano"],
+  ["pt", "Portuguese", "Português"],
+  ["ar", "Arabic", "العربية"],
+  ["zh-CN", "Chinese", "简体中文"],
+  ["ja", "Japanese", "日本語"],
+  ["ko", "Korean", "한국어"],
+  ["ru", "Russian", "Русский"],
+  ["nl", "Dutch", "Nederlands"],
+  ["tr", "Turkish", "Türkçe"],
+  ["id", "Indonesian", "Bahasa Indonesia"],
+  ["vi", "Vietnamese", "Tiếng Việt"],
+  ["th", "Thai", "ไทย"],
+] as const
 
-export default function LanguageSelector() {
-  const [language, setLanguage] = useState("en")
+export default function LanguageSelector({ placement = "footer" }: { placement?: "utility" | "header" | "footer" }) {
   const [open, setOpen] = useState(false)
-  const selectorRef = useRef<HTMLDivElement>(null)
+  const [selected, setSelected] = useState("en")
+  const rootRef = useRef<HTMLDivElement>(null)
+  const [error, setError] = useState("")
+  const retryRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
-    setLanguage(getCurrentLanguage())
+    window.googleTranslateElementInit = () => {
+      if (
+        !window.google ||
+        document.querySelector("#google_translate_element select")
+      )
+        return
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          includedLanguages: languages.map(([code]) => code).join(","),
+          autoDisplay: false,
+        },
+        "google_translate_element",
+      )
+    }
 
-    if (!document.querySelector("#google-translate-script")) {
-      window.googleTranslateElementInit = () => {
-        if (!window.google) return
-        new window.google.translate.TranslateElement(
-          {
-            pageLanguage: "en",
-            includedLanguages: languages.map(({ code }) => code).join(","),
-            autoDisplay: false,
-          },
-          "google_translate_element",
-        )
-      }
-
+    if (window.google) {
+      window.googleTranslateElementInit()
+    } else if (!document.querySelector("script[data-nexgen-translate]")) {
       const script = document.createElement("script")
-      script.id = "google-translate-script"
       script.src =
         "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
       script.async = true
+      script.dataset.nexgenTranslate = "true"
       document.body.appendChild(script)
     }
 
-    const closeMenu = (event: MouseEvent) => {
-      if (!selectorRef.current?.contains(event.target as Node)) setOpen(false)
+    const close = (event: MouseEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false)
     }
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false)
-    }
-    document.addEventListener("mousedown", closeMenu)
-    window.addEventListener("keydown", closeOnEscape)
+    document.addEventListener("mousedown", close)
+    const sync = () => setSelected(document.documentElement.dataset.language || "en")
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false) }
+    sync()
+    window.addEventListener("nexgen-language", sync)
+    document.addEventListener("keydown", escape)
     return () => {
-      document.removeEventListener("mousedown", closeMenu)
-      window.removeEventListener("keydown", closeOnEscape)
+      document.removeEventListener("mousedown", close)
+      document.removeEventListener("keydown", escape)
+      window.removeEventListener("nexgen-language", sync)
+      if (retryRef.current) clearInterval(retryRef.current)
     }
   }, [])
 
-  const changeLanguage = (code: string) => {
-    setLanguage(code)
+  const selectLanguage = (code: string) => {
     setOpen(false)
-    const expires = code === "en" ? "Thu, 01 Jan 1970 00:00:00 GMT" : ""
-    const value = code === "en" ? "" : `/en/${code}`
-    document.cookie = `googtrans=${value};path=/;${
-      expires ? `expires=${expires};` : ""
-    }`
-
-    if (window.location.hostname.includes(".")) {
-      document.cookie = `googtrans=${value};path=/;domain=.${window.location.hostname};${
-        expires ? `expires=${expires};` : ""
-      }`
+    setError("")
+    if (retryRef.current) clearInterval(retryRef.current)
+    const apply = () => {
+      const googleSelect = document.querySelector<HTMLSelectElement>(".goog-te-combo")
+      if (!googleSelect) return false
+      googleSelect.value = code
+      googleSelect.dispatchEvent(new Event("change", { bubbles: true }))
+      document.documentElement.dataset.language = code
+      window.dispatchEvent(new Event("nexgen-language"))
+      return true
     }
-
-    window.location.reload()
+    if (apply()) return
+    let attempts = 0
+    retryRef.current = setInterval(() => {
+      attempts += 1
+      if (apply() || attempts >= 20) {
+        if (retryRef.current) clearInterval(retryRef.current)
+        retryRef.current = null
+        if (attempts >= 20 && !document.querySelector(".goog-te-combo")) setError("Translation unavailable. Please try again.")
+      }
+    }, 400)
   }
 
+  const selectedLanguage =
+    languages.find(([code]) => code === selected) ?? languages[0]
+  const selectedLanguageCode =
+    selectedLanguage[0] === "en"
+      ? "ENG"
+      : selectedLanguage[0] === "hi"
+        ? "HIN"
+        : selectedLanguage[0].toUpperCase()
   return (
-    <div
-      className="language-selector notranslate"
-      ref={selectorRef}
-      translate="no"
-    >
+    <div className={`language-selector language-selector--${placement} notranslate`} ref={rootRef}>
       <button
-        className="language-selector__trigger interactive"
-        type="button"
-        aria-label="Change website language"
+        className="language-trigger"
+        onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
-        aria-haspopup="menu"
-        onClick={() => setOpen(!open)}
+        aria-haspopup="listbox"
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="8.5" />
-          <path d="M3.8 12h16.4M12 3.5c2.3 2.4 3.5 5.2 3.5 8.5S14.3 18.1 12 20.5M12 3.5C9.7 5.9 8.5 8.7 8.5 12s1.2 6.1 3.5 8.5" />
-        </svg>
-        <span>{language === "zh-CN" ? "ZH" : language.toUpperCase()}</span>
-        <i aria-hidden="true">⌄</i>
+        <span className="language-code">
+          {placement === "utility" ? selectedLanguage[1] : selectedLanguageCode}
+        </span>
+        {placement === "utility" && <span aria-hidden="true">⌄</span>}
       </button>
-      <div
-        className={`language-selector__menu ${
-          open ? "language-selector__menu--open" : ""
-        }`}
-        role="menu"
-        aria-label="Website languages"
-      >
-        <div className="language-selector__heading">Select language</div>
-        <div className="language-selector__list">
-          {languages.map(({ code, english, native }) => (
-            <button
-              className={language === code ? "active" : ""}
-              type="button"
-              role="menuitemradio"
-              aria-checked={language === code}
-              onClick={() => changeLanguage(code)}
-              key={code}
-            >
-              <span>{english}</span>
-              <small>({native})</small>
-              <i aria-hidden="true">{language === code ? "✓" : ""}</i>
-            </button>
-          ))}
+      {open && (
+        <div
+          className="language-menu"
+          role="listbox"
+          aria-label="Select language"
+        >
+          <strong>Select language</strong>
+          <div>
+            {languages.map(([code, label, native]) => (
+              <button
+                key={code}
+                role="option"
+                aria-selected={selected === code}
+                onClick={() => selectLanguage(code)}
+              >
+                <span>{label}</span>
+                <small>{native}</small>
+                {selected === code && <b>✓</b>}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
-      <div id="google_translate_element" aria-hidden="true" />
+      )}
+      {error && <span className="language-error" role="status">{error}</span>}
     </div>
   )
 }

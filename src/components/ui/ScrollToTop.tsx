@@ -2,31 +2,15 @@ import { useEffect, useState } from "react"
 
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false)
-
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 520)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
+    const update = () => setVisible(window.scrollY > 400)
+    update()
+    window.addEventListener("scroll", update, { passive: true })
+    return () => window.removeEventListener("scroll", update)
   }, [])
-
-  const scrollToTop = () => {
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" })
-  }
-
   return (
-    <button
-      className={`scroll-to-top interactive ${
-        visible ? "scroll-to-top--visible" : ""
-      }`}
-      type="button"
-      aria-label="Scroll back to top"
-      onClick={scrollToTop}
-    >
-      <span aria-hidden="true">↑</span>
+    <button className={`scroll-to-top${visible ? " visible" : ""}`} aria-label="Scroll to top" tabIndex={visible ? 0 : -1} onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })}>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
     </button>
   )
 }
