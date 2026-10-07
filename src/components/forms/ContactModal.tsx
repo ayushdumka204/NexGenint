@@ -101,7 +101,7 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
           </label>
           <label>
             Location <b>*</b>
-            <input required name="location" value="India" readOnly />
+            <input required name="location" placeholder="Location" />
           </label>
           <label className="contact-modal-full">
             Tell us more about your needs. <b>*</b>
