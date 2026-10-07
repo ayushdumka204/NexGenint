@@ -92,10 +92,6 @@ export default function ContactModal({ onClose }: { onClose: () => void }) {
             <input required name="industry" placeholder="Industry" />
           </label>
           <label>
-            Company <b>*</b>
-            <input required name="company" placeholder="Company name" />
-          </label>
-          <label>
             Country <b>*</b>
             <input required name="country" placeholder="Country" />
           </label>
