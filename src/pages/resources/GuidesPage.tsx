@@ -36,9 +36,9 @@ export default function GuidesPage() {
         </div>
       </section>
       <section className="guide-topics">
-        {guides.map((guide, index) => (
+        {guides.map((guide) => (
           <article key={guide.path}>
-            <span>Guide / 0{index + 1}</span>
+            <span>Research guide</span>
             <h2>{guide.title}</h2>
             <p>{guide.description}</p>
             <Link to={guide.path} className="text-link">

@@ -40,7 +40,7 @@ export default function SolutionFlipCard({
       <div className="flip-inner">
         <div className="flip-face flip-front" aria-hidden={flipped}>
           <span className="flip-label">
-            {String(index + 1).padStart(2, "0")} / Research solution
+            Research solution
           </span>
           <h3>{entry.title}</h3>
           <p>{entry.description}</p>

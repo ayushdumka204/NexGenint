@@ -31,7 +31,7 @@ export default function LeadershipPage() {
           MM<span>Founder Director</span>
         </div>
         <div>
-          <span className="annotation">Leadership / 01</span>
+          <span className="annotation">Leadership</span>
           <h2>Mahesh Mahtolia</h2>
           <h3>Founder Director</h3>
           <p>
@@ -46,7 +46,7 @@ export default function LeadershipPage() {
           DB<span>Operations Leadership</span>
         </div>
         <div>
-          <span className="annotation">Leadership / 02</span>
+          <span className="annotation">Leadership</span>
           <h2>Devendra Bhatt</h2>
           <h3>COO / Operations Leadership</h3>
           <p>
@@ -66,9 +66,9 @@ export default function LeadershipPage() {
             "Hands-on execution oversight",
             "Methodological fit",
             "Quality-focused delivery",
-          ].map((item, index) => (
+          ].map((item) => (
             <span key={item}>
-              0{index + 1} / {item}
+              {item}
             </span>
           ))}
         </div>

@@ -10,13 +10,11 @@ import {
 } from "@/components/ui/Icons"
 import LanguageSelector from "@/components/ui/LanguageSelector"
 import SocialIcons from "@/components/ui/SocialIcons"
-import ContactModal from "@/components/forms/ContactModal"
 
 export default function Header() {
   const [active, setActive] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [contactOpen, setContactOpen] = useState(false)
   const location = useLocation()
   const headerRef = useRef<HTMLElement>(null)
   const mobileToggleRef = useRef<HTMLButtonElement>(null)
@@ -43,7 +41,6 @@ export default function Header() {
       onKeyDown={(event) => {
         if (event.key !== "Escape") return
         if (mobileOpen) mobileToggleRef.current?.focus()
-        else if (contactOpen) setContactOpen(false)
         else if (active)
           headerRef.current
             ?.querySelector<HTMLButtonElement>(".nav-item.active")
@@ -92,17 +89,13 @@ export default function Header() {
               <ChevronIcon />
             </button>
           ))}
-          <button
-            type="button"
+          <Link
             className="nav-item nav-contact"
-            onClick={() => {
-              setActive(null)
-              setContactOpen(true)
-            }}
+            to="/contact"
             aria-current={location.pathname === "/contact" ? "page" : undefined}
           >
             Contact
-          </button>
+          </Link>
         </nav>
         <ButtonLink href="/request-proposal">Request proposal</ButtonLink>
         <button
@@ -190,20 +183,16 @@ export default function Header() {
               </div>
             </details>
           ))}
-          <button
+          <Link
             className="mobile-contact-link"
-            type="button"
-            onClick={() => {
-              setMobileOpen(false)
-              setContactOpen(true)
-            }}
+            to="/contact"
+            onClick={() => setMobileOpen(false)}
           >
             Contact
-          </button>
+          </Link>
           <ButtonLink href="/request-proposal">Request proposal</ButtonLink>
         </nav>
       )}
-      {contactOpen && <ContactModal onClose={() => setContactOpen(false)} />}
     </header>
   )
 }

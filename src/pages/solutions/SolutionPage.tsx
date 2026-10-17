@@ -63,9 +63,8 @@ export default function SolutionPage({ entry }: { entry: ContentEntry }) {
           </p>
         </div>
         <div>
-          {entry.questions.map((question, index) => (
+          {entry.questions.map((question) => (
             <article key={question}>
-              <span>0{index + 1}</span>
               <h3>{question}</h3>
             </article>
           ))}
@@ -118,9 +117,8 @@ export default function SolutionPage({ entry }: { entry: ContentEntry }) {
             "Audience and behaviour understanding",
             "Opportunity and barrier identification",
             "Implications for strategy and execution",
-          ].map((item, index) => (
+          ].map((item) => (
             <article key={item}>
-              <span>0{index + 1}</span>
               <p>{item}</p>
             </article>
           ))}

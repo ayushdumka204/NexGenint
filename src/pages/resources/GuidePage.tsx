@@ -19,9 +19,9 @@ export default function GuidePage({ entry }: { entry: ContentEntry }) {
           <p>{entry.description}</p>
         </div>
         <div className="guide-diagram">
-          {entry.journey.slice(0, 4).map((item, index) => (
+          {entry.journey.slice(0, 4).map((item) => (
             <span key={item}>
-              {index + 1}. {item}
+              {item}
             </span>
           ))}
         </div>

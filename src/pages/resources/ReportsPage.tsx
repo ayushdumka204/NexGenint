@@ -45,7 +45,7 @@ export default function ReportsPage() {
           {reports.map((report, index) => (
             <article key={report.path}>
               <div className={`report-cover cover-${index + 1}`}>
-                <span>NEXGEN / REPORT 0{index + 1}</span>
+                <span>NEXGEN / REPORT</span>
                 <strong>{report.title}</strong>
                 <i>Illustrative preview</i>
               </div>

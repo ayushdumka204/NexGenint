@@ -19,7 +19,6 @@ export default function JourneyMap({ items }: { items: string[] }) {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          <span>{String(index + 1).padStart(2, "0")}</span>
           <i />
           <strong>{item}</strong>
         </motion.div>

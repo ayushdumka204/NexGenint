@@ -53,9 +53,8 @@ export default function CareersPage() {
             "How you can grow",
             "Learn through exposure to projects, methods, field realities and experienced leadership.",
           ],
-        ].map(([title, body], index) => (
+        ].map(([title, body]) => (
           <article key={title}>
-            <span>0{index + 1}</span>
             <h2>{title}</h2>
             <p>{body}</p>
           </article>

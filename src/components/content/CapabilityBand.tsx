@@ -12,9 +12,8 @@ export default function CapabilityBand({
         <h2>{title}</h2>
       </div>
       <div className="capability-list">
-        {items.map((item, index) => (
+        {items.map((item) => (
           <div key={item}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
             <strong>{item}</strong>
           </div>
         ))}

@@ -41,9 +41,7 @@ export default function CollectionPage({
             className={index % 5 === 0 ? "featured" : ""}
           >
             <img src={entry.image} alt="" loading="lazy" />
-            <span>
-              {String(index + 1).padStart(2, "0")} / {entry.theme}
-            </span>
+            <span>{entry.theme}</span>
             <h2>{entry.title}</h2>
             <p>{entry.description}</p>
             <ArrowIcon />
