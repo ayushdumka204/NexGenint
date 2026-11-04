@@ -147,3 +147,5 @@
 
 # Certification assets must be committed as regular files for Vercel.
 public/certifications/*.png -filter -diff -merge
+
+src/assets/certifications/*.png -filter -diff -merge

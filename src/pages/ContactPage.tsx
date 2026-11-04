@@ -1,4 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react"
+import dpdpActImage from "@/assets/certifications/dpdp-act-2023.png"
+import isoCertificateImage from "@/assets/certifications/nexgen-iso-9001-certificate.png"
+import isoLogoImage from "@/assets/certifications/iso-9001-2015.png"
+import q2aLogoImage from "@/assets/certifications/q2a-uk.png"
 
 type IconName = "check" | "mail" | "phone" | "shield" | "upload" | "arrow" | "file"
 
@@ -69,24 +73,21 @@ const metrics = [
   ["60,000", "Hospitals in Our Database"],
 ] as const
 
-const publicAsset = (path: string) =>
-  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`
-
 const certifications = [
   {
-    image: publicAsset("certifications/iso-9001-2015.png"),
+    image: isoLogoImage,
     alt: "ISO 9001:2015 mark",
     title: "ISO 9001:2015",
     text: "Quality management for market research and public opinion polling.",
   },
   {
-    image: publicAsset("certifications/q2a-uk.png"),
+    image: q2aLogoImage,
     alt: "Q2A-UK Certification Board mark",
     title: "Q2A-UK Certification Board",
     text: "Third-party certification of the quality management system.",
   },
   {
-    image: publicAsset("certifications/dpdp-act-2023.png"),
+    image: dpdpActImage,
     alt: "Digital Personal Data Protection Act 2023 mark",
     title: "DPDP Act 2023",
     text: "Consent, data handling and retention aligned with India's Digital Personal Data Protection Act.",
@@ -604,7 +605,7 @@ export default function ContactUs() {
               </p>
               <a
                 className="ng-outline-button"
-                href={publicAsset("certifications/nexgen-iso-9001-certificate.png")}
+                href={isoCertificateImage}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -615,7 +616,7 @@ export default function ContactUs() {
             <figure className="ng-certificate-figure">
               <div className="ng-certificate-placeholder">
                 <img
-                  src={publicAsset("certifications/nexgen-iso-9001-certificate.png")}
+                  src={isoCertificateImage}
                   alt="NexGen Market Research Services ISO 9001:2015 certificate"
                 />
               </div>
