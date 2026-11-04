@@ -2,7 +2,7 @@
   background: var(--purple-900, #211047);
   color: #fff;
   padding: 0;
-  border-top: 3px solid #80cb29;
+  border-top: 0;
 }
 .clean-footer .nf-inner {
   width: min(calc(100% - 2 * var(--page-gutter, 48px)), var(--max, 1320px));

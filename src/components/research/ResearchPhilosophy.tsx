@@ -72,7 +72,7 @@ export default function ResearchPhilosophy() {
       if (end <= start || destination < start || position > end) return
       if (position < start && destination < start) return
       if (delta < 0 && position < start) return
-      if (delta > 0 && active === steps.length - 1 && position >= end) return
+      if (delta > 0 && active === steps.length - 1) return
       const distance = end - start
       const limitedDelta =
         Math.sign(delta) * Math.min(Math.abs(delta), distance / steps.length + 24)

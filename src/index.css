@@ -50,7 +50,7 @@ p { color: var(--text); line-height: 1.75; }
 .text-link { display: inline-flex; align-items: center; gap: 15px; color: var(--purple-800); font-size: 14px; font-weight: 600; }
 .text-link svg { width: 17px; transition: transform .25s; }
 .text-link:hover svg { transform: translateX(4px); }
-.site-header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--line); background: rgba(252,251,248,.94); backdrop-filter: blur(16px); }
+
 .header-inner { width: min(calc(100% - 80px), var(--max)); height: 82px; margin: auto; display: flex; align-items: center; gap: 30px; }
 .wordmark { width: 185px; display: flex; flex-direction: column; }
 .wordmark img { width: 142px; height: auto; }
@@ -714,7 +714,7 @@ button:disabled { cursor: wait; opacity: .65; }
 .header-utility a { position: relative; font-size: 11px; }
 .header-utility a + a::before { content: ""; position: absolute; left: -13px; top: 3px; width: 1px; height: 10px; background: rgba(255,255,255,.28); }
 .header-inner { height: 78px; }
-.desktop-nav { justify-content: flex-end; }
+
 .nav-item { font-weight: 500; }
 .mega-menu { top: 118px; }
 
@@ -1479,4 +1479,32 @@ main :is(section[id], h2[id], h3[id]) { scroll-margin-top: 120px; }
   .hero h1 { font-size: clamp(36px,9.5vw,46px); line-height: 1.08; margin-block: 20px; }
   .hero-copy > p { font-size: 16px; }
   .hero-intelligence .research-visual { min-height: 380px; }
+}
+
+
+/* Center Desktop Navigation */
+@media (min-width: 1051px) {
+  .site-header.reference-header .header-inner {
+    position: relative;
+  }
+
+  .site-header.reference-header .desktop-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    flex: none;
+    justify-content: center;
+  }
+
+  .site-header.reference-header .header-actions {
+    margin-left: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .site-header.reference-header .wordmark {
+    position: relative;
+    z-index: 2;
+  }
 }
