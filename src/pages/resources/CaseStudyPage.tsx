@@ -24,6 +24,7 @@ export default function CaseStudyPage({ entry }: { entry: ContentEntry }) {
       </section>
       <section className="case-narrative">
         <div>
+          <span>01</span>
           <h2>Challenge</h2>
           <p>
             A complex research question calls for a structured view of
@@ -31,6 +32,7 @@ export default function CaseStudyPage({ entry }: { entry: ContentEntry }) {
           </p>
         </div>
         <div>
+          <span>02</span>
           <h2>Research objective</h2>
           <p>
             Define what needed to be understood and which audiences and
@@ -38,6 +40,7 @@ export default function CaseStudyPage({ entry }: { entry: ContentEntry }) {
           </p>
         </div>
         <div>
+          <span>03</span>
           <h2>Research design</h2>
           <p>
             Connect appropriate methodology, recruitment, field execution and

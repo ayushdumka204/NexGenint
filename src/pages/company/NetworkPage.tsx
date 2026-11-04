@@ -34,9 +34,9 @@ export default function NetworkPage() {
       </section>
       <section className="geography-band">
         {["North", "South", "East", "West", "Central", "Northeast"].map(
-          (item) => (
+          (item, index) => (
             <span key={item}>
-              {item}
+              0{index + 1} / {item}
             </span>
           ),
         )}

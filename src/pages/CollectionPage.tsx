@@ -4,6 +4,12 @@ import type { ContentEntry } from "@/types/content"
 import { ArrowIcon } from "@/components/ui/Icons"
 import PageCTA from "@/components/content/PageCTA"
 import { setPageMetadata } from "@/lib/seo"
+import researchSummaries from "@/data/research-summaries.json"
+
+const summaries: Record<string, {
+  title: string
+  headline: string
+}> = researchSummaries
 
 interface CollectionPageProps {
   title: string
@@ -34,19 +40,31 @@ export default function CollectionPage({
         <p>{description}</p>
       </section>
       <section className="collection-index">
-        {entries.map((entry, index) => (
-          <Link
-            to={entry.path}
-            key={entry.path}
-            className={index % 5 === 0 ? "featured" : ""}
-          >
-            <img src={entry.image} alt="" loading="lazy" />
-            <span>{entry.theme}</span>
-            <h2>{entry.title}</h2>
-            <p>{entry.description}</p>
-            <ArrowIcon />
-          </Link>
-        ))}
+        {entries.map((original, index) => {
+          const document = summaries[original.path]
+          const entry = document
+            ? {
+                ...original,
+                title: document.title,
+                description: document.headline,
+              }
+            : original
+          return (
+            <Link
+              to={entry.path}
+              key={entry.path}
+              className={index % 5 === 0 ? "featured" : ""}
+            >
+              <img src={entry.image} alt="" loading="lazy" />
+              <span>
+                {String(index + 1).padStart(2, "0")} / {entry.theme}
+              </span>
+              <h2>{entry.title}</h2>
+              <p>{entry.description}</p>
+              <ArrowIcon />
+            </Link>
+          )
+        })}
       </section>
       <PageCTA />
     </main>

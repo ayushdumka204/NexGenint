@@ -82,8 +82,9 @@ export default function IndustryPage({ entry }: { entry: ContentEntry }) {
                 "What evidence is required before action?",
               ]),
             ),
-          ].map((item) => (
+          ].map((item, index) => (
             <article key={item}>
+              <span>Q{index + 1}</span>
               <h3>{item}</h3>
             </article>
           ))}

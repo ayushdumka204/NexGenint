@@ -33,8 +33,9 @@ export default function ContactPage() {
             "Expert conversation",
             "Research design",
             "Proposal",
-          ].map((item) => (
+          ].map((item, index) => (
             <div key={item}>
+              <span>0{index + 1}</span>
               <strong>{item}</strong>
             </div>
           ))}

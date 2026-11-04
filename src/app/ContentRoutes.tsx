@@ -11,6 +11,8 @@ import ReportPage from "@/pages/resources/ReportPage"
 import CaseStudyPage from "@/pages/resources/CaseStudyPage"
 import GuidePage from "@/pages/resources/GuidePage"
 import NotFoundPage from "@/pages/NotFoundPage"
+import ResearchDetailPage from "@/pages/ResearchDetailPage"
+import { getResearchDocument } from "@/data/research-content"
 
 function useEntry(kind: ContentKind) {
   const { slug = "" } = useParams()
@@ -19,18 +21,30 @@ function useEntry(kind: ContentKind) {
 
 export function SolutionRoute() {
   const entry = useEntry("solution")
+  const document = entry && getResearchDocument(entry.path)
+  if (entry && document)
+    return <ResearchDetailPage entry={entry} document={document} />
   return entry ? <SolutionPage entry={entry} /> : <NotFoundPage />
 }
 export function MethodologyRoute() {
   const entry = useEntry("methodology")
+  const document = entry && getResearchDocument(entry.path)
+  if (entry && document)
+    return <ResearchDetailPage entry={entry} document={document} />
   return entry ? <MethodologyPage entry={entry} /> : <NotFoundPage />
 }
 export function IndustryRoute() {
   const entry = useEntry("industry")
+  const document = entry && getResearchDocument(entry.path)
+  if (entry && document)
+    return <ResearchDetailPage entry={entry} document={document} />
   return entry ? <IndustryPage entry={entry} /> : <NotFoundPage />
 }
 export function FieldworkRoute() {
   const entry = useEntry("fieldwork")
+  const document = entry && getResearchDocument(entry.path)
+  if (entry && document)
+    return <ResearchDetailPage entry={entry} document={document} />
   return entry ? <FieldworkPage entry={entry} /> : <NotFoundPage />
 }
 export function AcademicRoute() {

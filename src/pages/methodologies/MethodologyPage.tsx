@@ -71,8 +71,9 @@ export default function MethodologyPage({ entry }: { entry: ContentEntry }) {
           <h2>What makes the method rigorous?</h2>
         </div>
         <div>
-          {entry.capabilities.map((item) => (
+          {entry.capabilities.map((item, index) => (
             <article key={item}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{item}</h3>
               <p>
                 Clear protocols create consistency while preserving the context

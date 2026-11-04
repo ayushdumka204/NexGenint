@@ -35,6 +35,7 @@ export default function FieldworkPage({ entry }: { entry: ContentEntry }) {
       <section className="operations-strip">
         {["People", "Process", "Technology"].map((item, index) => (
           <div key={item}>
+            <span>0{index + 1}</span>
             <strong>{item}</strong>
             <p>
               {index === 0

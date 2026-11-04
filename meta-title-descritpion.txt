@@ -1,0 +1,623 @@
+========================================================================
+NEXGEN MARKET RESEARCH — META TITLE, DESCRIPTION & KEYWORDS MASTER SHEET
+========================================================================
+
+PART 1: PRIORITY SEO SHEET (REQUESTED CATEGORIES)
+------------------------------------------------------------------------
+
+Home Page
+Route: /
+Meta Title: Market Research Company in Delhi, India | Customer Research
+Meta Description: NexGen is a leading market research company delivering consumer insights and data-driven strategies for B2B/B2C growth, feasibility studies, and surveys.
+Meta Keywords: market research company in Delhi, market research company in India, customer research, consumer insights, B2B market research, B2C market research, feasibility studies, market research surveys, NexGen Market Research
+
+Services Main Page
+Route: /solutions
+Meta Title: Services | NexGen Market Research
+Meta Description: Qualitative & quantitative research, competitor analysis, surveys, data collection, B2B/B2C research, consulting & market insights services.
+Meta Keywords: market research services, qualitative research, quantitative research, competitor analysis, market surveys, data collection services, B2B research, B2C research, market research consulting
+
+Qualitative Research
+Route: /methodologies/qualitative
+Meta Title: Qualitative Research Services | Data Collection Services
+Meta Description: In-depth qualitative research on consumer behavior using focus groups, interviews, ethnography, usability testing, and central location tests.
+Meta Keywords: qualitative research services, qualitative data collection, focus group discussions FGD, in-depth interviews IDI, consumer behavior research, usability testing
+
+Quantitative Research
+Route: /methodologies/quantitative
+Meta Title: Quantitative Data Collection & Research Services
+Meta Description: Expert quantitative research and data collection using F2F, telephonic, and CAWI surveys with statistical analysis to provide actionable insights for your business.
+Meta Keywords: quantitative research services, quantitative data collection, F2F CAPI surveys, telephonic CATI surveys, CAWI online surveys, statistical market analysis
+
+Online Market Research
+Route: /methodologies/cawi
+Meta Title: Top Online Market Research Firm | Data Collection Services
+Meta Description: NexGen is a leading market research company offering online surveys, consumer panels, and data collection services for actionable insights.
+Meta Keywords: online market research firm, CAWI online surveys, digital data collection services, online consumer panels, web survey programming India
+
+Desk & Secondary Research
+Route: /methodologies/secondary-research
+Meta Title: Secondary Market Research & Primary Research Services
+Meta Description: Comprehensive desk research services combining secondary market research data with primary insights to give you a 360-degree view of your industry.
+Meta Keywords: secondary market research, desk research services, competitor intelligence, market sizing desk study, primary and secondary research India
+
+Data Collection
+Route: /data-fieldwork/data-collection
+Meta Title: Quantitative and Qualitative Data Collection Services
+Meta Description: End-to-end research and data collection services. From field surveys to digital data gathering, we provide high-quality qualitative and quantitative data.
+Meta Keywords: quantitative data collection, qualitative data collection services, field survey execution India, CAPI CATI CAWI fieldwork
+
+Market Share Reports
+Route: /resources/reports
+Meta Title: Market Research Survey and Reports | Data Analysis
+Meta Description: NexGen provides market share reports and competitor analysis services to help businesses improve strategies and plan future growth.
+Meta Keywords: market share reports, market research survey reports, competitor analysis reports, industry data analysis India
+
+Feasibility & Market Entry
+Route: /solutions/market-assessment
+Meta Title: Market Entry Reports and Consulting Support
+Meta Description: NexGen provides feasibility and market entry reports with in-depth analysis and consulting support for informed business decisions.
+Meta Keywords: feasibility and market entry reports, market assessment services, market sizing analysis, competitor analysis, market entry consulting, start-up research solutions
+
+Competitor Analysis
+Route: /resources/insights
+Meta Title: Market Research Company help in Competitor Analysis
+Meta Description: NexGen offers competitor analysis services to help businesses identify market opportunities and build effective growth strategies.
+Meta Keywords: competitor analysis services, market research insights, competitive benchmarking, consumer trend analysis India
+
+Consulting Services
+Route: /company/about
+Meta Title: Market Research Consulting | Market Survey Consultants
+Meta Description: NexGen offers market research consulting services with strategic insights to help businesses identify opportunities and drive growth.
+Meta Keywords: market research consulting, market survey consultants, about NexGen Market Research, strategic market insights India
+
+Survey Programming and Tabulation
+Route: /data-fieldwork/survey-programming
+Meta Title: Survey Programming and Tabulation Services | Nexgen INT
+Meta Description: Nexgen INT provides survey programming and tabulation services with accurate data processing, reporting, and research insights
+Meta Keywords: survey programming services, questionnaire scripting, skip logic quota setup, multilingual digital surveys, survey tabulation Nexgen INT
+
+Translation and Transcription
+Route: /data-fieldwork/transcription
+Meta Title: Transcription and qualitative research Companies
+Meta Description: NexGen offers transcription and qualitative research services to help businesses understand consumer behavior and market trends.
+Meta Keywords: research transcription services, qualitative interview transcription, FGD IDI audio transcription, multilingual transcription India
+
+Social-Research
+Route: /solutions/social-research
+Meta Title: Social Research & Socio Economic Research Company
+Meta Description: NexGen provides social and socio-economic research services to help businesses understand consumer behavior and market trends.
+Meta Keywords: social research company India, socio economic research, baseline midline endline studies, CSR impact assessment, KAP studies, rural development research
+
+Agriculture Research
+Route: /industries/agriculture
+Meta Title: Agriculture Research Company | Agriculture Market Insights
+Meta Description: NexGen offers agriculture research services with market insights and analysis to understand agricultural trends and consumer behavior.
+Meta Keywords: agriculture research company, agriculture market insights, farmer survey India, agri-input seed fertilizer study, rural agribusiness research
+
+E-Market Research
+Route: /industries/retail-ecommerce
+Meta Title: E-commerce Market Research
+Meta Description: NexGen offers e-commerce market research services to understand online consumer behavior, market trends, and business growth opportunities.
+Meta Keywords: e-commerce market research, online shopper behavior, omnichannel retail research, D2C brand research, marketplace customer experience
+
+Start-up Research Solutions
+Route: /company/why-nexgen
+Meta Title: Start-up Research Services | Nexgen INT
+Meta Description: Nexgen INT provides start-up research solutions including market analysis, competitor research, feasibility studies, and growth insights.
+Meta Keywords: start-up research services, why NexGen Market Research, competitor research, feasibility studies, business growth insights
+
+Academic Research Support
+Route: /academic-research
+Meta Title: Academic Research Services | Nexgen INT
+Meta Description: Get reliable academic research support from Nexgen INT including data collection, surveys, analysis, and research assistance services.
+Meta Keywords: academic research services, PhD scholar data collection, university survey support, longitudinal academic studies, Nexgen INT academic research
+
+Mystery Shopping
+Route: /methodologies/mystery-shopping
+Meta Title: Mystery Shopping Services for Business Insights | Nexgen INT
+Meta Description: Nexgen INT offers professional mystery shopping services to evaluate customer experience, service quality, and business performance.
+Meta Keywords: mystery shopping services India, retail service audits, customer experience evaluation, secret shopper audits, store compliance checks
+
+B2B Marketing Research
+Route: /solutions/b2b
+Meta Title: B2B Marketing Research Services | Nexgen INT
+Meta Description: Nexgen INT delivers B2B marketing research services with market insights, competitor analysis, surveys, and business growth strategies.
+Meta Keywords: B2B marketing research services, B2B market research India, CXO decision maker interviews, dealer distributor research, industrial market research, vendor procurement study
+
+B2C Marketing Research
+Route: /solutions/consumer-insights
+Meta Title: B2C Marketing Research Services | Nexgen INT
+Meta Description: Nexgen INT provides B2C marketing research services to understand consumer behavior, market trends, and customer preferences.
+Meta Keywords: B2C marketing research services, consumer insights research, buyer behavior study, customer preference surveys India
+
+Industries
+Route: /industries
+Meta Title: Industries We Serve | Sector Market Research Services – NexGen
+Meta Description: Healthcare & Pharma | Technology and IT | Manufacturing | Automobile | Education | FMCG and Retail | Financial Services | Real Estate | D2C
+Meta Keywords: healthcare and pharma research, technology and IT market research, manufacturing B2B research, automobile research, education research, FMCG and retail research, financial services BFSI, real estate research, D2C market research
+
+Brand Health Tracking
+Route: /solutions/brand-research
+Meta Title: Brand Research & Brand Health Tracking Services in India | NexGen
+Meta Description: Measure brand awareness, brand equity, perception, positioning, and longitudinal brand health tracking with NexGen Market Research services in India.
+Meta Keywords: brand health tracking, brand research services India, brand equity research, brand awareness study, brand positioning research, competitive brand benchmarking
+
+Customer Experience (CX)
+Route: /solutions/customer-experience
+Meta Title: Customer Experience (CX) & Satisfaction Research Services | NexGen
+Meta Description: Measure CSAT, Net Promoter Score (NPS), customer effort, journey touchpoints, and retention drivers with NexGen's customer experience research solutions.
+Meta Keywords: customer experience research, CX research services, customer satisfaction CSAT study, Net Promoter Score NPS research, Voice of Customer VoC, customer journey mapping
+
+Pricing Research
+Route: /solutions/pricing
+Meta Title: Pricing Research & Willingness to Pay Studies in India | NexGen
+Meta Description: Optimize product pricing, price sensitivity, pack-price architecture, and promotional strategy with NexGen's pricing research services in India.
+Meta Keywords: pricing research services India, willingness to pay study, price sensitivity analysis, price-pack architecture research, competitive price benchmarking
+
+Product Testing and Concept
+Route: /solutions/product-innovation
+Meta Title: Product Testing, Concept Testing & Innovation Research | NexGen
+Meta Description: Validate new product ideas, concepts, prototypes, packaging, and sensory appeal through IHUT, CLT, and usability research before and after launch.
+Meta Keywords: product testing research, concept testing services, product innovation research, prototype evaluation, packaging research, IHUT, CLT testing India
+
+Advertising Research
+Route: /solutions/communication-research
+Meta Title: Advertising & Communication Research Services in India | NexGen
+Meta Description: Evaluate ad effectiveness, creative copy testing, message recall, media channel impact, and campaign ROI with NexGen's advertising and communication research.
+Meta Keywords: advertising research services, communication research India, ad recall testing, creative copy testing, campaign evaluation research, media effectiveness study
+
+Consumer Segmentation
+Route: /solutions/consumer-insights
+Meta Title: Consumer Segmentation & Profiling Research Services | NexGen
+Meta Description: Identify high-growth customer segments, buyer personas, need-states, and behavioral profiles with NexGen's consumer segmentation research in India.
+Meta Keywords: consumer segmentation research, customer profiling India, buyer persona research, psychographic and behavioral segmentation, U&A studies
+
+========================================================================
+PART 2: COMPLETE WEBSITE PAGE-BY-PAGE SEO DIRECTORY (74 ROUTES)
+------------------------------------------------------------------------
+
+Home Page
+URL Path: /
+Meta Title: Market Research Company in Delhi, India | Customer Research
+Meta Description: NexGen is a leading market research company delivering consumer insights and data-driven strategies for B2B/B2C growth, feasibility studies, and surveys.
+Meta Keywords: market research company in Delhi, market research company in India, customer research, consumer insights, B2B market research, B2C market research, feasibility studies, market research surveys, NexGen Market Research
+
+Services Main Page (Solutions)
+URL Path: /solutions
+Meta Title: Services | NexGen Market Research
+Meta Description: Qualitative & quantitative research, competitor analysis, surveys, data collection, B2B/B2C research, consulting & market insights services.
+Meta Keywords: market research services, qualitative research, quantitative research, competitor analysis, market surveys, data collection services, B2B research, B2C research, market research consulting
+
+Consumer Insights / B2C Marketing Research & Consumer Segmentation
+URL Path: /solutions/consumer-insights
+Meta Title: Consumer Insights & Segmentation Services | B2C Marketing Research – NexGen
+Meta Description: Nexgen INT provides B2C marketing research, consumer insights, and consumer segmentation services to understand consumer behavior, market trends, and customer preferences.
+Meta Keywords: consumer insights research, consumer segmentation services, B2C marketing research services, usage and attitude studies, buyer behavior research, customer profiling India
+
+Brand Research & Brand Health Tracking
+URL Path: /solutions/brand-research
+Meta Title: Brand Research & Brand Health Tracking Services in India | NexGen
+Meta Description: Measure brand awareness, brand equity, perception, positioning, and longitudinal brand health tracking with NexGen Market Research services in India.
+Meta Keywords: brand research services India, brand health tracking, brand equity research, brand awareness study, brand positioning research, competitive brand benchmarking
+
+Communication & Advertising Research
+URL Path: /solutions/communication-research
+Meta Title: Advertising & Communication Research Services in India | NexGen
+Meta Description: Evaluate ad effectiveness, creative copy testing, message recall, media channel impact, and campaign ROI with NexGen's advertising and communication research.
+Meta Keywords: advertising research services, communication research India, ad recall testing, creative copy testing, campaign evaluation research, media effectiveness study
+
+Product Testing and Concept (Product & Innovation Research)
+URL Path: /solutions/product-innovation
+Meta Title: Product Testing, Concept Testing & Innovation Research | NexGen
+Meta Description: Validate new product ideas, concepts, prototypes, packaging, and sensory appeal through IHUT, CLT, and usability research before and after launch.
+Meta Keywords: product testing research, concept testing services, product innovation research, prototype evaluation, packaging research, IHUT, CLT testing India
+
+Feasibility & Market Entry (Market Assessment)
+URL Path: /solutions/market-assessment
+Meta Title: Market Entry Reports and Consulting Support
+Meta Description: NexGen provides feasibility and market entry reports with in-depth analysis and consulting support for informed business decisions.
+Meta Keywords: feasibility and market entry reports, market assessment services, market sizing analysis, competitor analysis, market entry consulting, start-up research solutions
+
+Customer Experience (CX)
+URL Path: /solutions/customer-experience
+Meta Title: Customer Experience (CX) & Satisfaction Research Services | NexGen
+Meta Description: Measure CSAT, Net Promoter Score (NPS), customer effort, journey touchpoints, and retention drivers with NexGen's customer experience research solutions.
+Meta Keywords: customer experience research, CX research services, customer satisfaction CSAT study, Net Promoter Score NPS research, Voice of Customer VoC, customer journey mapping
+
+Pricing Research
+URL Path: /solutions/pricing
+Meta Title: Pricing Research & Willingness to Pay Studies in India | NexGen
+Meta Description: Optimize product pricing, price sensitivity, pack-price architecture, and promotional strategy with NexGen's pricing research services in India.
+Meta Keywords: pricing research services India, willingness to pay study, price sensitivity analysis, price-pack architecture research, competitive price benchmarking
+
+B2B Marketing Research
+URL Path: /solutions/b2b
+Meta Title: B2B Marketing Research Services | Nexgen INT
+Meta Description: Nexgen INT delivers B2B marketing research services with market insights, competitor analysis, surveys, and business growth strategies.
+Meta Keywords: B2B marketing research services, B2B market research India, CXO decision maker interviews, dealer distributor research, industrial market research, vendor procurement study
+
+Retail & Shopper Research
+URL Path: /solutions/retail-shopper
+Meta Title: Retail Shopper Research Services in India | Shopper Behaviour & Insights – NexGen
+Meta Description: Understand what your shopper really does in the store. NexGen tracks shopper journey, purchase behaviour and decision-making across India.
+Meta Keywords: retail shopper research India, shopper behaviour insights, retail audits, shelf visibility audit, in-store observation, point of sale research
+
+Retail Census & Universe Mapping
+URL Path: /solutions/census
+Meta Title: Census and Universe Mapping Services in India | NexGen
+Meta Description: Identify, list, and map eligible households, retail outlets, kirana stores, businesses, and institutions across India with verified census mapping.
+Meta Keywords: retail census India, universe mapping services, outlet listing survey, household census data collection, GIS location validation, establishment mapping
+
+Social-Research
+URL Path: /solutions/social-research
+Meta Title: Social Research & Socio Economic Research Company
+Meta Description: NexGen provides social and socio-economic research services to help businesses understand consumer behavior and market trends.
+Meta Keywords: social research company India, socio economic research, baseline midline endline studies, CSR impact assessment, KAP studies, rural development research
+
+Methodologies Main Page
+URL Path: /methodologies
+Meta Title: Market Research Methodologies | Qualitative & Quantitative – NexGen
+Meta Description: Explore NexGen's qualitative, quantitative, mixed-methods, CAPI, CATI, CAWI, ethnography, mystery shopping, and secondary research methodologies.
+Meta Keywords: market research methodologies, qualitative and quantitative methods, CAPI CATI CAWI surveys, focus group discussions, ethnography, secondary research
+
+Quantitative Research
+URL Path: /methodologies/quantitative
+Meta Title: Quantitative Data Collection & Research Services
+Meta Description: Expert quantitative research and data collection using F2F, telephonic, and CAWI surveys with statistical analysis to provide actionable insights for your business.
+Meta Keywords: quantitative research services, quantitative data collection, F2F CAPI surveys, telephonic CATI surveys, CAWI online surveys, statistical market analysis
+
+Qualitative Research
+URL Path: /methodologies/qualitative
+Meta Title: Qualitative Research Services | Data Collection Services
+Meta Description: In-depth qualitative research on consumer behavior using focus groups, interviews, ethnography, usability testing, and central location tests.
+Meta Keywords: qualitative research services, qualitative data collection, focus group discussions FGD, in-depth interviews IDI, consumer behavior research, usability testing
+
+Mixed-Methods Research
+URL Path: /methodologies/mixed-methods
+Meta Title: Mixed-Methods Market Research Services in India | NexGen
+Meta Description: Combine quantitative surveys with qualitative interviews and focus groups for a complete view of market scale and customer motivations.
+Meta Keywords: mixed-methods research India, qualitative and quantitative integration, multi-stage market research, triangulated consumer insights
+
+CAPI & Face-to-Face Research
+URL Path: /methodologies/capi-f2f
+Meta Title: CAPI & Face-to-Face Survey Services in India | NexGen
+Meta Description: Reliable in-person CAPI and face-to-face survey data collection across urban, semi-urban, and rural markets in India.
+Meta Keywords: CAPI survey services India, face-to-face market research, tablet survey data collection, household surveys, field interviewing services
+
+CATI Telephonic Research
+URL Path: /methodologies/cati
+Meta Title: CATI Telephone Survey Services in India | NexGen
+Meta Description: Structured Computer-Assisted Telephone Interviewing (CATI) for customer satisfaction, B2B decision-makers, and multi-city research.
+Meta Keywords: CATI survey services India, telephonic market research, computer assisted telephone interviewing, B2B phone surveys, call center research
+
+Online Market Research (CAWI & Online Surveys)
+URL Path: /methodologies/cawi
+Meta Title: Top Online Market Research Firm | Data Collection Services
+Meta Description: NexGen is a leading market research company offering online surveys, consumer panels, and data collection services for actionable insights.
+Meta Keywords: online market research firm, CAWI online surveys, digital data collection services, online consumer panels, web survey programming India
+
+Focus Group Discussions (FGD)
+URL Path: /methodologies/fgd
+Meta Title: Focus Group Discussion (FGD) Research Services in India | NexGen
+Meta Description: Moderator-led in-person, online, and hybrid focus group discussions to uncover consumer perceptions, brand reactions, and unmet needs.
+Meta Keywords: focus group discussions India, FGD market research, qualitative group moderation, participant recruitment FGD, consumer group interviews
+
+In-Depth Interviews (IDI)
+URL Path: /methodologies/idi
+Meta Title: In-Depth Interview (IDI) & Key Informant Research | NexGen
+Meta Description: One-to-one in-depth interviews with consumers, CXOs, healthcare professionals, and industry experts for detailed qualitative insights.
+Meta Keywords: in-depth interviews IDI, key informant interviews KII, qualitative executive interviews, one-on-one market research India
+
+Ethnography & Contextual Research
+URL Path: /methodologies/ethnography
+Meta Title: Ethnographic & Contextual Market Research Services | NexGen
+Meta Description: Observe consumers in real-life home, workplace, and retail settings to uncover natural habits, product usage, and unarticulated needs.
+Meta Keywords: ethnographic research India, contextual consumer observation, in-home ethnography, shop-along research, behavioral observation study
+
+Central Location Testing (CLT)
+URL Path: /methodologies/clt
+Meta Title: Central Location Testing (CLT) Services in India | NexGen
+Meta Description: Evaluate product prototypes, sensory attributes, packaging, and concepts under controlled central location testing conditions.
+Meta Keywords: central location testing CLT India, sensory product testing, controlled product evaluation, blind taste testing, pack testing
+
+In-Home Usage Testing (IHUT)
+URL Path: /methodologies/ihut
+Meta Title: In-Home Usage Testing (IHUT) Research Services | NexGen
+Meta Description: Measure real-world product performance, repeat usage, and household feedback through structured In-Home Usage Testing (IHUT).
+Meta Keywords: in-home usage testing IHUT, home product placement study, real-world product trial research, consumer product testing India
+
+Mystery Shopping
+URL Path: /methodologies/mystery-shopping
+Meta Title: Mystery Shopping Services for Business Insights | Nexgen INT
+Meta Description: Nexgen INT offers professional mystery shopping services to evaluate customer experience, service quality, and business performance.
+Meta Keywords: mystery shopping services India, retail service audits, customer experience evaluation, secret shopper audits, store compliance checks
+
+Desk & Secondary Research
+URL Path: /methodologies/secondary-research
+Meta Title: Secondary Market Research & Primary Research Services
+Meta Description: Comprehensive desk research services combining secondary market research data with primary insights to give you a 360-degree view of your industry.
+Meta Keywords: secondary market research, desk research services, competitor intelligence, market sizing desk study, primary and secondary research India
+
+Industries Main Page
+URL Path: /industries
+Meta Title: Industries We Serve | Sector Market Research Services – NexGen
+Meta Description: Healthcare & Pharma | Technology and IT | Manufacturing | Automobile | Education | FMCG and Retail | Financial Services | Real Estate | D2C
+Meta Keywords: healthcare and pharma research, technology and IT market research, manufacturing B2B research, automobile research, education research, FMCG and retail research, financial services BFSI, real estate research, D2C market research
+
+FMCG & Consumer Goods Industry
+URL Path: /industries/fmcg
+Meta Title: FMCG Market Research Services in India | Consumer Goods – NexGen
+Meta Description: Understand FMCG consumers, brand preferences, product testing, pack-price architecture, and retail shopper behavior across India.
+Meta Keywords: FMCG market research India, consumer goods research, food and beverage market study, personal care brand research, kirana retail audit
+
+Healthcare & Pharmaceutical Industry
+URL Path: /industries/healthcare
+Meta Title: Healthcare & Pharmaceutical Market Research Services | NexGen
+Meta Description: Conduct ethical patient journey studies, HCP & doctor interviews, pharmacy channel audits, and medical device usability research in India.
+Meta Keywords: healthcare market research India, pharmaceutical research services, HCP doctor surveys, patient journey research, pharmacy audit, medical device study
+
+Automotive & Mobility Industry
+URL Path: /industries/automotive
+Meta Title: Automotive & EV Mobility Market Research Services in India | NexGen
+Meta Description: Explore vehicle buyer journeys, ownership satisfaction, after-sales service, dealer audits, and EV adoption barriers across India.
+Meta Keywords: automotive market research India, EV electric vehicle research, car buyer journey study, dealer satisfaction audit, fleet mobility research
+
+BFSI (Banking, Financial Services & Insurance)
+URL Path: /industries/bfsi
+Meta Title: BFSI Market Research Services in India | Banking & Fintech – NexGen
+Meta Description: Understand banking habits, insurance purchase drivers, credit decisions, digital payment adoption, and customer trust in financial services.
+Meta Keywords: BFSI market research India, banking customer satisfaction, insurance market research, fintech user research, digital payments study
+
+E-Market Research (Retail & E-commerce)
+URL Path: /industries/retail-ecommerce
+Meta Title: E-commerce Market Research
+Meta Description: NexGen offers e-commerce market research services to understand online consumer behavior, market trends, and business growth opportunities.
+Meta Keywords: e-commerce market research, online shopper behavior, omnichannel retail research, D2C brand research, marketplace customer experience
+
+Technology & Digital Industry
+URL Path: /industries/technology
+Meta Title: Technology, IT & SaaS Market Research Services in India | NexGen
+Meta Description: Understand enterprise IT buyers, SaaS adoption, digital product usability, subscription pricing, and user churn drivers.
+Meta Keywords: technology market research India, SaaS user research, B2B IT buyer study, digital product usability testing, software pricing research
+
+Consumer Durables Industry
+URL Path: /industries/consumer-durables
+Meta Title: Consumer Durables & Electronics Market Research in India | NexGen
+Meta Description: Study appliance purchase consideration, feature preferences, dealer influence, warranty satisfaction, and replacement cycles.
+Meta Keywords: consumer durables market research, home appliances consumer study, electronics buyer research, dealer channel research India
+
+Education & Academic Industry
+URL Path: /industries/education
+Meta Title: Education & EdTech Market Research Services in India | NexGen
+Meta Description: Understand student and parent decision-making, institutional perception, course demand, and academic primary data collection.
+Meta Keywords: education market research India, EdTech consumer research, student parent survey, university brand perception, academic data collection
+
+Manufacturing & Industrial B2B
+URL Path: /industries/manufacturing-b2b
+Meta Title: Manufacturing & Industrial B2B Market Research in India | NexGen
+Meta Description: Evaluate industrial product demand, procurement decision-making, distributor networks, and competitor benchmarking across India.
+Meta Keywords: manufacturing market research India, industrial B2B research, supply chain channel study, procurement buyer interviews, machinery demand assessment
+
+Agriculture Research
+URL Path: /industries/agriculture
+Meta Title: Agriculture Research Company | Agriculture Market Insights
+Meta Description: NexGen offers agriculture research services with market insights and analysis to understand agricultural trends and consumer behavior.
+Meta Keywords: agriculture research company, agriculture market insights, farmer survey India, agri-input seed fertilizer study, rural agribusiness research
+
+Real Estate & Property Industry
+URL Path: /industries/real-estate
+Meta Title: Real Estate & Property Market Research Services in India | NexGen
+Meta Description: Assess residential and commercial property demand, location feasibility, buyer preferences, pricing, and tenant satisfaction.
+Meta Keywords: real estate market research India, property demand feasibility study, residential buyer survey, commercial catchment analysis
+
+Hospitality, Travel & Tourism
+URL Path: /industries/hospitality
+Meta Title: Hospitality, Travel & Tourism Market Research in India | NexGen
+Meta Description: Understand guest expectations, booking journeys, hotel and restaurant satisfaction, and service quality audits across India.
+Meta Keywords: hospitality market research India, travel and tourism consumer study, hotel guest satisfaction survey, restaurant mystery shopping
+
+Public Sector & Government
+URL Path: /industries/public-sector
+Meta Title: Public Sector, Government & Policy Research Services | NexGen
+Meta Description: Support government departments and development agencies with citizen satisfaction surveys, scheme evaluation, and large-scale field studies.
+Meta Keywords: public sector research India, government scheme evaluation, citizen satisfaction survey, beneficiary household research, policy impact study
+
+Data & Fieldwork Main Page
+URL Path: /data-fieldwork
+Meta Title: Quantitative and Qualitative Data Collection Services
+Meta Description: End-to-end research and data collection services. From field surveys to digital data gathering, we provide high-quality qualitative and quantitative data.
+Meta Keywords: data collection and fieldwork India, market research fieldwork services, respondent recruitment, survey programming, translation transcription, data processing
+
+Data Collection
+URL Path: /data-fieldwork/data-collection
+Meta Title: Quantitative and Qualitative Data Collection Services
+Meta Description: End-to-end research and data collection services. From field surveys to digital data gathering, we provide high-quality qualitative and quantitative data.
+Meta Keywords: quantitative data collection, qualitative data collection services, field survey execution India, CAPI CATI CAWI fieldwork
+
+Respondent & Participant Recruitment
+URL Path: /data-fieldwork/recruitment
+Meta Title: Market Research Respondent Recruitment Services in India | NexGen
+Meta Description: Verified recruitment of consumers, B2B decision-makers, CXOs, doctors, patients, and rural participants for qualitative and quantitative studies.
+Meta Keywords: market research respondent recruitment, participant recruitment India, B2B CXO recruitment, healthcare patientHCP recruitment, FGD IDI recruitment
+
+Survey Programming and Tabulation
+URL Path: /data-fieldwork/survey-programming
+Meta Title: Survey Programming and Tabulation Services | Nexgen INT
+Meta Description: Nexgen INT provides survey programming and tabulation services with accurate data processing, reporting, and research insights
+Meta Keywords: survey programming services, questionnaire scripting, skip logic quota setup, multilingual digital surveys, survey tabulation Nexgen INT
+
+Translation & Localisation
+URL Path: /data-fieldwork/translation
+Meta Title: Research Translation & Localisation Services in India | NexGen
+Meta Description: Accurate multilingual translation and localisation of questionnaires, discussion guides, and research instruments across Indian and global languages.
+Meta Keywords: research translation services India, questionnaire localisation, multilingual survey translation, back-translation market research
+
+Translation and Transcription
+URL Path: /data-fieldwork/transcription
+Meta Title: Transcription and qualitative research Companies
+Meta Description: NexGen offers transcription and qualitative research services to help businesses understand consumer behavior and market trends.
+Meta Keywords: research transcription services, qualitative interview transcription, FGD IDI audio transcription, multilingual transcription India
+
+Data Processing, Coding & Tabulation
+URL Path: /data-fieldwork/data-processing
+Meta Title: Market Research Data Processing, Coding & Tabulation | NexGen
+Meta Description: Clean, validate, code, and tabulate raw research data into SPSS, Excel, and cross-tabulation deliverables ready for statistical analysis.
+Meta Keywords: market research data processing, open-ended coding, cross-tabulation services, SPSS data cleaning, survey tabulation India
+
+Academic Research Support
+URL Path: /academic-research
+Meta Title: Academic Research Services | Nexgen INT
+Meta Description: Get reliable academic research support from Nexgen INT including data collection, surveys, analysis, and research assistance services.
+Meta Keywords: academic research services, PhD scholar data collection, university survey support, longitudinal academic studies, Nexgen INT academic research
+
+Academic Primary Data Collection
+URL Path: /academic-research/data-collection
+Meta Title: Academic Primary Data Collection Services | Nexgen INT
+Meta Description: Structured primary data collection, field surveys, and respondent recruitment for universities, faculty, and PhD research scholars.
+Meta Keywords: academic primary data collection, university field survey support, PhD thesis data collection, scholarly research execution India
+
+Longitudinal Academic Research
+URL Path: /academic-research/longitudinal
+Meta Title: Longitudinal Research & Panel Data Collection Support | NexGen
+Meta Description: Multi-period longitudinal data collection and cohort tracking for academic institutions, policy researchers, and social scientists.
+Meta Keywords: longitudinal research support, cohort tracking surveys, multi-year academic study, panel data collection India
+
+Experimental & Field Intervention Research
+URL Path: /academic-research/experimental
+Meta Title: Experimental & RCT Field Research Support in India | NexGen
+Meta Description: Field execution, baseline/endline measurement, and protocol compliance for experimental designs and randomized evaluations.
+Meta Keywords: experimental research support, RCT field data collection, behavioral experiment surveys, academic intervention evaluation
+
+Multi-Wave Research
+URL Path: /academic-research/multi-wave
+Meta Title: Multi-Wave Survey Execution & Tracking Studies | NexGen
+Meta Description: Consistent sampling, instrument control, and data comparability across multi-wave academic and institutional research projects.
+Meta Keywords: multi-wave survey research, repeat wave data collection, academic tracking study, institutional survey execution
+
+Academic Quantitative Research
+URL Path: /academic-research/quantitative
+Meta Title: Academic Quantitative Surveys & Statistical Data Support | NexGen
+Meta Description: Large-scale CAPI, CATI, and CAWI quantitative survey execution with clean SPSS/Stata-ready datasets for academic researchers.
+Meta Keywords: academic quantitative research, scholarly survey data collection, SPSS Stata dataset preparation, quantitative fieldwork India
+
+Academic Qualitative Research
+URL Path: /academic-research/qualitative
+Meta Title: Academic Qualitative Interviews, FGDs & Transcription | NexGen
+Meta Description: Qualitative field interviews, focus group discussions, local-language translation, and verbatim transcripts for academic scholarship.
+Meta Keywords: academic qualitative research, scholarly in-depth interviews, FGD recruitment and moderation, verbatim research transcription
+
+Research Resources Hub
+URL Path: /resources
+Meta Title: Market Research Resources, Reports, Case Studies & Guides | NexGen
+Meta Description: Explore NexGen's market research case studies, industry insights, sample market share reports, and practical methodology guides.
+Meta Keywords: market research resources, consumer insight articles, sample market reports, research methodology guides, case studies India
+
+Success Stories & Case Studies
+URL Path: /resources/success-stories
+Meta Title: Market Research Case Studies & Success Stories | NexGen
+Meta Description: See how NexGen structures research objectives, methodologies, PAN-India fieldwork, and actionable insights across industries.
+Meta Keywords: market research case studies, consumer research success stories, healthcare B2B FMCG research examples
+
+Case Study: Mapping a Healthcare Stakeholder Journey
+URL Path: /resources/success-stories/healthcare-research-in-action
+Meta Title: Healthcare Stakeholder Journey Case Study | NexGen Market Research
+Meta Description: How qualitative and quantitative stakeholder mapping clarifies patient, caregiver, and clinician realities in Indian healthcare.
+Meta Keywords: healthcare research case study, patient stakeholder journey mapping, qualitative healthcare study India
+
+Competitor Analysis & Market Insights
+URL Path: /resources/insights
+Meta Title: Market Research Company help in Competitor Analysis
+Meta Description: NexGen offers competitor analysis services to help businesses identify market opportunities and build effective growth strategies.
+Meta Keywords: competitor analysis services, market research insights, competitive benchmarking, consumer trend analysis India
+
+Insight: Understanding the New Indian Consumer
+URL Path: /resources/insights/understanding-the-new-indian-consumer
+Meta Title: Understanding the New Indian Consumer | Market Insights – NexGen
+Meta Description: Why regional diversity, Tier II/III aspirations, and channel shifts require a contextual approach to consumer research in India.
+Meta Keywords: Indian consumer behavior, Tier 2 Tier 3 market research, emerging consumer trends India
+
+Insight: Researching Hard-to-Reach B2B Decision-Makers
+URL Path: /resources/insights/b2b-hard-to-reach-decision-makers
+Meta Title: Researching Hard-to-Reach B2B Decision-Makers | NexGen
+Meta Description: Practical methods for recruiting and interviewing CXOs, technical experts, procurement leads, and channel partners in B2B markets.
+Meta Keywords: B2B decision maker research, CXO interview recruitment, industrial stakeholder research India
+
+Market Share Reports
+URL Path: /resources/reports
+Meta Title: Market Research Survey and Reports | Data Analysis
+Meta Description: NexGen provides market share reports and competitor analysis services to help businesses improve strategies and plan future growth.
+Meta Keywords: market share reports, market research survey reports, competitor analysis reports, industry data analysis India
+
+Sample Report: Market Entry Research
+URL Path: /resources/reports/market-entry-research
+Meta Title: Market Entry & Feasibility Research Report Structure | NexGen
+Meta Description: An illustrative framework showing how NexGen structures market sizing, competitive intelligence, and entry recommendations.
+Meta Keywords: market entry research report, feasibility study sample report, competitor intelligence report structure
+
+Research Guides
+URL Path: /resources/research-guides
+Meta Title: Market Research Guides & Methodology Handbooks | NexGen
+Meta Description: Practical guides for selecting qualitative vs. quantitative methods, planning PAN-India fieldwork, and designing academic studies.
+Meta Keywords: market research guides, research methodology handbook, fieldwork planning guide, qualitative vs quantitative guide
+
+Guide: Choosing a Research Methodology
+URL Path: /resources/research-guides/choosing-a-research-methodology
+Meta Title: How to Choose a Market Research Methodology | NexGen Guide
+Meta Description: A step-by-step decision guide for matching business questions with qualitative, quantitative, or mixed-methods research.
+Meta Keywords: choosing a research methodology, qualitative vs quantitative decision guide, research design framework
+
+Guide: Planning Academic Data Collection
+URL Path: /resources/research-guides/planning-academic-research
+Meta Title: Planning Academic Primary Data Collection | NexGen Guide
+Meta Description: How scholars and universities can prepare questionnaires, sampling quotas, translations, and field protocols for reliable data collection.
+Meta Keywords: planning academic data collection, PhD survey fieldwork guide, questionnaire pilot testing
+
+Consulting Services (About NexGen)
+URL Path: /company/about
+Meta Title: Market Research Consulting | Market Survey Consultants
+Meta Description: NexGen offers market research consulting services with strategic insights to help businesses identify opportunities and drive growth.
+Meta Keywords: market research consulting, market survey consultants, about NexGen Market Research, strategic market insights India
+
+Leadership
+URL Path: /company/leadership
+Meta Title: Leadership Team | NexGen Market Research Services
+Meta Description: Meet the senior research and operations leadership guiding NexGen's methodology standards, PAN-India fieldwork, and client delivery.
+Meta Keywords: NexGen Market Research leadership, market research directors India, senior research consultants
+
+Start-up Research Solutions (Why NexGen)
+URL Path: /company/why-nexgen
+Meta Title: Start-up Research Services | Nexgen INT
+Meta Description: Nexgen INT provides start-up research solutions including market analysis, competitor research, feasibility studies, and growth insights.
+Meta Keywords: start-up research services, why NexGen Market Research, competitor research, feasibility studies, business growth insights
+
+PAN-India Network
+URL Path: /company/pan-india-network
+Meta Title: PAN-India Market Research & Fieldwork Network | NexGen
+Meta Description: Reach urban metros, Tier II & Tier III cities, and rural districts across India with NexGen's localized fieldwork network and central quality control.
+Meta Keywords: PAN-India fieldwork network, multi-city market research India, rural and Tier 2 Tier 3 data collection, regional language interviewers
+
+Research Quality (FactCheck)
+URL Path: /company/quality
+Meta Title: FactCheck™ Market Research Quality & Data Validation | NexGen
+Meta Description: Learn how NexGen's FactCheck quality management system protects respondent authenticity, field protocols, back-checks, and clean datasets.
+Meta Keywords: market research quality control, FactCheck quality system, survey data validation, fieldwork back-checks India
+
+Careers
+URL Path: /company/careers
+Meta Title: Careers in Market Research & Field Operations | NexGen
+Meta Description: Join NexGen Market Research across qualitative moderation, quantitative analysis, survey programming, and PAN-India field operations.
+Meta Keywords: market research jobs India, careers at NexGen, qualitative researcher jobs, fieldwork operations careers
+
+Contact NexGen
+URL Path: /contact
+Meta Title: Contact NexGen Market Research | Delhi, India & International
+Meta Description: Connect with NexGen Market Research in New Delhi for consumer insights, B2B/B2C surveys, PAN-India fieldwork, and custom research proposals.
+Meta Keywords: contact NexGen Market Research, market research company New Delhi contact, request market research consultation
+
+Request a Research Proposal
+URL Path: /request-proposal
+Meta Title: Request a Market Research Proposal & Quote | NexGen INT
+Meta Description: Share your business objectives, target audience, and timeline with NexGen to receive a tailored market research design and proposal within 24–48 hours.
+Meta Keywords: request market research proposal, market survey quote India, custom research brief NexGen INT
+

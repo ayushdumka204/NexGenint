@@ -57,7 +57,6 @@ export default function ResearchPhilosophy() {
         return
       const section = root.current
       if (!section || event.deltaY === 0) return
-      if (event.deltaY > 0 && active === steps.length - 1) return
       const bounds = section.getBoundingClientRect()
       const start = bounds.top + window.scrollY - 120
       const end = bounds.bottom + window.scrollY - window.innerHeight
@@ -73,6 +72,7 @@ export default function ResearchPhilosophy() {
       if (end <= start || destination < start || position > end) return
       if (position < start && destination < start) return
       if (delta < 0 && position < start) return
+      if (delta > 0 && active === steps.length - 1 && position >= end) return
       const distance = end - start
       const limitedDelta =
         Math.sign(delta) * Math.min(Math.abs(delta), distance / steps.length + 24)
@@ -149,6 +149,7 @@ export default function ResearchPhilosophy() {
                 setActive(index)
               }}
             >
+              <span className="philosophy-number">0{index + 1}</span>
               <span className="philosophy-icon">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d={step.icon} />
@@ -170,7 +171,9 @@ export default function ResearchPhilosophy() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <span>{steps[active].title}</span>
+              <span>
+                0{active + 1} / {steps[active].title}
+              </span>
               <h3>{steps[active].label}</h3>
               <p>{steps[active].text}</p>
             </motion.div>

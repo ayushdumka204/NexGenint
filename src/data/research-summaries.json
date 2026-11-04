@@ -1,0 +1,166 @@
+{
+  "/solutions/consumer-insights": {
+    "title": "Consumer Insights",
+    "headline": "Understand Your Customers. Know What Drives Their Choices."
+  },
+  "/solutions/brand-research": {
+    "title": "Brand Research",
+    "headline": "Understand How Customers See, Trust and Choose Your Brand."
+  },
+  "/solutions/communication-research": {
+    "title": "Communication Research",
+    "headline": "Make Every Brand Message Clear, Relevant and Effective."
+  },
+  "/solutions/product-innovation": {
+    "title": "Product & Innovation Research",
+    "headline": "Product & Innovation Research"
+  },
+  "/solutions/market-assessment": {
+    "title": "Market Assessment & Feasibility Research",
+    "headline": "Understand Your Market Before Making Business Decisions."
+  },
+  "/solutions/customer-experience": {
+    "title": "Customer Experience Research",
+    "headline": "Understand the Customers. Improve Their Experience."
+  },
+  "/solutions/pricing": {
+    "title": "Pricing Research",
+    "headline": "Set the Right Price Based on What Customers Are Willing to Pay."
+  },
+  "/solutions/b2b": {
+    "title": "B2B Research",
+    "headline": "Understand Your Business Buyers and Make Better Decisions."
+  },
+  "/solutions/retail-shopper": {
+    "title": "Retail Shopper Research",
+    "headline": "Understand What Shoppers Notice, Compare and Buy."
+  },
+  "/solutions/census": {
+    "title": "Census & Universe Mapping",
+    "headline": "Know the Population, Businesses and Outlets You Need to Reach."
+  },
+  "/solutions/social-research": {
+    "title": "Social & Development Research",
+    "headline": "Understand Community Needs. Make Better Programme Decisions."
+  },
+  "/methodologies/quantitative": {
+    "title": "Quantitative Research",
+    "headline": "Get Clear Answers Through Data and Surveys."
+  },
+  "/methodologies/qualitative": {
+    "title": "Qualitative Research",
+    "headline": "Understand Why People Think, Feel and Make Choices."
+  },
+  "/methodologies/mixed-methods": {
+    "title": "Mixed-Methods Research",
+    "headline": "Combine Data and Customer Insights for a Clearer Picture."
+  },
+  "/methodologies/capi-f2f": {
+    "title": "CAPI & Face-to-Face Research",
+    "headline": "Reliable Survey Data Through Direct Conversations."
+  },
+  "/methodologies/cati": {
+    "title": "CATI Research",
+    "headline": "Reach Respondents Through Telephone Interviews."
+  },
+  "/methodologies/cawi": {
+    "title": "CAWI & Online Surveys",
+    "headline": "Reach the Right Audience Through Online Surveys."
+  },
+  "/methodologies/fgd": {
+    "title": "Focus Group Discussions",
+    "headline": "Understand What People Think and Why."
+  },
+  "/methodologies/idi": {
+    "title": "In-Depth Interviews",
+    "headline": "One-to-One Conversations to Understand People Better."
+  },
+  "/methodologies/ethnography": {
+    "title": "Ethnography & Contextual Research",
+    "headline": "Understand How People Behave in Real-Life Settings."
+  },
+  "/methodologies/mystery-shopping": {
+    "title": "Mystery Shopping",
+    "headline": "Understand Your Service from a Customer's Point of View."
+  },
+  "/methodologies/secondary-research": {
+    "title": "Secondary Research & Market Intelligence",
+    "headline": "Make Better Decisions with Existing Market Information."
+  },
+  "/industries/fmcg": {
+    "title": "FMCG & Consumer Goods",
+    "headline": "Understand Consumers, Products and Buying Behaviour."
+  },
+  "/industries/healthcare": {
+    "title": "Healthcare & Pharmaceutical Research",
+    "headline": "Understand Patients, Healthcare Professionals and the Market."
+  },
+  "/industries/automotive": {
+    "title": "Automotive & Mobility",
+    "headline": "Understand Vehicle Buyers, Owners and Changing Mobility Needs."
+  },
+  "/industries/bfsi": {
+    "title": "Banking, Financial Services & Insurance",
+    "headline": "Understand Financial Customers and Their Changing Needs."
+  },
+  "/industries/retail-ecommerce": {
+    "title": "Retail & E-commerce",
+    "headline": "Understand How Customers Shop Online and Offline."
+  },
+  "/industries/technology": {
+    "title": "Technology & Digital",
+    "headline": "Understand Technology Users, Buyers and Their Needs."
+  },
+  "/industries/consumer-durables": {
+    "title": "Consumer Durables",
+    "headline": "Understand What Customers Look for in Durable Products."
+  },
+  "/industries/education": {
+    "title": "Education & Academic Research",
+    "headline": "Understand Students, Institutions and Education Needs."
+  },
+  "/industries/manufacturing-b2b": {
+    "title": "Manufacturing & B2B Research",
+    "headline": "Understand Industrial Buyers, Markets and Business Needs."
+  },
+  "/industries/agriculture": {
+    "title": "Agriculture & Agribusiness",
+    "headline": "Understand the Farmer. Understand the Market."
+  },
+  "/industries/real-estate": {
+    "title": "Real Estate & Property",
+    "headline": "Understand the People and Market Behind Every Property Decision."
+  },
+  "/industries/hospitality": {
+    "title": "Hospitality, Travel & Tourism",
+    "headline": "Understand Guests. Improve the Experience They Remember."
+  },
+  "/industries/public-sector": {
+    "title": "Public Sector & Government",
+    "headline": "Understand Citizens. Improve Public Services."
+  },
+  "/data-fieldwork/data-collection": {
+    "title": "Data Collection & Fieldwork",
+    "headline": "Reliable Fieldwork for Better Research."
+  },
+  "/data-fieldwork/recruitment": {
+    "title": "Respondent & Participant Recruitment",
+    "headline": "The Quality of Research Starts with the Right Participants."
+  },
+  "/data-fieldwork/survey-programming": {
+    "title": "Survey Programming",
+    "headline": "Turn Research Questionnaires into Ready-to-Use Surveys."
+  },
+  "/data-fieldwork/translation": {
+    "title": "Translation & Localisation",
+    "headline": "Making Research Clear and Easy to Understand in Every Language"
+  },
+  "/data-fieldwork/transcription": {
+    "title": "Transcription Services",
+    "headline": "Turning Research Recordings into Clear Written Records"
+  },
+  "/data-fieldwork/data-processing": {
+    "title": "Data Processing, Coding & Tabulation",
+    "headline": "Preparing Raw Research Data for Analysis"
+  }
+}

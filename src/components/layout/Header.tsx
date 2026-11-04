@@ -2,14 +2,9 @@ import { useEffect, useRef, useState } from "react"
 import { Link, useLocation } from "react-router"
 import { navigation } from "@/data/navigation"
 import ButtonLink from "@/components/ui/ButtonLink"
-import {
-  ArrowIcon,
-  ChevronIcon,
-  MenuIcon,
-  PlusIcon,
-} from "@/components/ui/Icons"
+import { ArrowIcon, MenuIcon, PlusIcon } from "@/components/ui/Icons"
 import LanguageSelector from "@/components/ui/LanguageSelector"
-import SocialIcons from "@/components/ui/SocialIcons"
+import "@/styles/header.css"
 
 export default function Header() {
   const [active, setActive] = useState<string | null>(null)
@@ -33,8 +28,17 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`site-header${scrolled ? " is-scrolled" : ""}`}
-      onMouseLeave={() => setActive(null)}
+      className={`site-header reference-header${
+        scrolled ? " is-scrolled" : ""
+      }`}
+      onMouseLeave={() => {
+        if (
+          !headerRef.current
+            ?.querySelector(".mega-menu")
+            ?.contains(document.activeElement)
+        )
+          setActive(null)
+      }}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setActive(null)
       }}
@@ -49,24 +53,7 @@ export default function Header() {
         setMobileOpen(false)
       }}
     >
-      <div className="header-utility">
-        <div>
-          <nav aria-label="Contact and utility links">
-            <a href="mailto:mail@nexgenint.com">mail@nexgenint.com</a>
-            <a href="tel:+919873177449">+91-98731 77449</a>
-          </nav>
-          <LanguageSelector placement="utility" />
-          <SocialIcons />
-        </div>
-      </div>
-      <div
-        className="header-inner"
-        onMouseLeave={(event) => {
-          const nextTarget = event.relatedTarget as Node | null
-          if (!nextTarget || !headerRef.current?.querySelector(".mega-menu")?.contains(nextTarget))
-            setActive(null)
-        }}
-      >
+      <div className="header-inner">
         <Link to="/" className="wordmark" aria-label="NexGen home">
           <img src="/images/nexgen-logo.png" alt="NexGen" />
         </Link>
@@ -86,18 +73,37 @@ export default function Header() {
               }
             >
               {group.label}
-              <ChevronIcon />
             </button>
           ))}
           <Link
-            className="nav-item nav-contact"
             to="/contact"
+            className="nav-item nav-contact"
+            onMouseEnter={() => setActive(null)}
+            onFocus={() => setActive(null)}
             aria-current={location.pathname === "/contact" ? "page" : undefined}
           >
             Contact
           </Link>
         </nav>
-        <ButtonLink href="/request-proposal">Request proposal</ButtonLink>
+        <div
+          className="header-actions"
+          onMouseEnter={() => setActive(null)}
+          onFocusCapture={() => setActive(null)}
+        >
+          <button
+            className="theme-switch-disabled"
+            type="button"
+            disabled
+            aria-label="Theme switching is disabled"
+            title="Theme switching is disabled. The current theme stays fixed."
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z" />
+            </svg>
+          </button>
+          <LanguageSelector placement="header" compact />
+          <ButtonLink href="/request-proposal">Request a Proposal</ButtonLink>
+        </div>
         <button
           ref={mobileToggleRef}
           className="menu-toggle"
@@ -115,35 +121,37 @@ export default function Header() {
           id="nexgen-mega-menu"
           className="mega-menu"
           onMouseEnter={() => setActive(activeGroup.label)}
-          onMouseLeave={() => setActive(null)}
         >
           <div className="mega-intro">
-            <span className="eyebrow">Explore NexGen</span>
-            <h3>{activeGroup.label}</h3>
-            <p>{activeGroup.description}</p>
-            <Link to={activeGroup.path} className="text-link">
-              View overview <ArrowIcon />
+            <Link className="eyebrow" to={activeGroup.path}>
+              Explore {activeGroup.label}
             </Link>
+            <h3>
+              {activeGroup.label === "Solutions" ? (
+                <>
+                  Focused
+                  <br />
+                  expertise.
+                  <br />
+                  <span className="menu-intro-last">Better decisions.</span>
+                </>
+              ) : (
+                activeGroup.label
+              )}
+            </h3>
+            <p>
+              {activeGroup.label === "Solutions"
+                ? "Research built around your questions, your people and your opportunities."
+                : activeGroup.description}
+            </p>
           </div>
           <div className="mega-links">
             {activeGroup.items.map((item) => (
-              <Link key={item.path} to={item.path} onClick={() => setActive(null)}>
+              <Link key={item.path} to={item.path}>
                 {item.label}
                 <ArrowIcon />
               </Link>
             ))}
-          </div>
-          <div className="mega-feature">
-            <span className="annotation">Research signal</span>
-            <strong>
-              Evidence is useful only when it changes what you do next.
-            </strong>
-            <div className="mini-path">
-              <i />
-              <i />
-              <i />
-              <i />
-            </div>
           </div>
         </div>
       )}

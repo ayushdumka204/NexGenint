@@ -68,8 +68,9 @@ export default function WhyNexGenPage() {
         </div>
       </section>
       <section className="reason-stack">
-        {reasons.map(([title, body]) => (
+        {reasons.map(([title, body], index) => (
           <article key={title}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
             <h2>{title}</h2>
             <p>{body}</p>
           </article>

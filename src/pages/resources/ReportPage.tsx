@@ -47,7 +47,7 @@ export default function ReportPage({ entry }: { entry: ContentEntry }) {
         {["Research objective", "Methodology", "Evidence framework"].map(
           (title, index) => (
             <article key={title}>
-              <span>Sample page</span>
+              <span>Sample page / 0{index + 1}</span>
               <h2>{title}</h2>
               <div className="preview-lines">
                 <i />

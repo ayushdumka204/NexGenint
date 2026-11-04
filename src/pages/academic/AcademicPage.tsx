@@ -26,7 +26,7 @@ export default function AcademicPage({ entry }: { entry: ContentEntry }) {
         <img src={entry.image} alt="Academic research environment" />
       </section>
       <section className="academic-principle">
-        <span>Research principle</span>
+        <span>Principle 01</span>
         <blockquote>
           “The research belongs to the researcher. Our role is to make the
           evidence robust, ethical and execution-ready.”

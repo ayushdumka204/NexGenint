@@ -47,7 +47,13 @@ const languages = [
   ["th", "Thai", "ไทย"],
 ] as const
 
-export default function LanguageSelector({ placement = "footer" }: { placement?: "utility" | "header" | "footer" }) {
+export default function LanguageSelector({
+  placement = "footer",
+  compact = false,
+}: {
+  placement?: "header" | "footer"
+  compact?: boolean
+}) {
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState("en")
   const rootRef = useRef<HTMLDivElement>(null)
@@ -86,8 +92,11 @@ export default function LanguageSelector({ placement = "footer" }: { placement?:
       if (!rootRef.current?.contains(event.target as Node)) setOpen(false)
     }
     document.addEventListener("mousedown", close)
-    const sync = () => setSelected(document.documentElement.dataset.language || "en")
-    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false) }
+    const sync = () =>
+      setSelected(document.documentElement.dataset.language || "en")
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false)
+    }
     sync()
     window.addEventListener("nexgen-language", sync)
     document.addEventListener("keydown", escape)
@@ -104,7 +113,8 @@ export default function LanguageSelector({ placement = "footer" }: { placement?:
     setError("")
     if (retryRef.current) clearInterval(retryRef.current)
     const apply = () => {
-      const googleSelect = document.querySelector<HTMLSelectElement>(".goog-te-combo")
+      const googleSelect =
+        document.querySelector<HTMLSelectElement>(".goog-te-combo")
       if (!googleSelect) return false
       googleSelect.value = code
       googleSelect.dispatchEvent(new Event("change", { bubbles: true }))
@@ -119,31 +129,52 @@ export default function LanguageSelector({ placement = "footer" }: { placement?:
       if (apply() || attempts >= 20) {
         if (retryRef.current) clearInterval(retryRef.current)
         retryRef.current = null
-        if (attempts >= 20 && !document.querySelector(".goog-te-combo")) setError("Translation unavailable. Please try again.")
+        if (attempts >= 20 && !document.querySelector(".goog-te-combo"))
+          setError("Translation unavailable. Please try again.")
       }
     }, 400)
   }
 
   const selectedLanguage =
     languages.find(([code]) => code === selected) ?? languages[0]
-  const selectedLanguageCode =
-    selectedLanguage[0] === "en"
-      ? "ENG"
-      : selectedLanguage[0] === "hi"
-        ? "HIN"
-        : selectedLanguage[0].toUpperCase()
   return (
-    <div className={`language-selector language-selector--${placement} notranslate`} ref={rootRef}>
+    <div
+      className={`language-selector language-selector--${placement} notranslate`}
+      ref={rootRef}
+    >
       <button
         className="language-trigger"
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-haspopup="listbox"
+        aria-label={`Change language. Current language: ${selectedLanguage[1]}`}
       >
-        <span className="language-code">
-          {placement === "utility" ? selectedLanguage[1] : selectedLanguageCode}
-        </span>
-        {placement === "utility" && <span aria-hidden="true">⌄</span>}
+        {compact ? (
+          <>
+            <svg
+              className="compact-language-globe"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3a17 17 0 0 1 0 18 17 17 0 0 1 0-18Z" />
+            </svg>
+            <span>{selectedLanguage[0].split("-")[0].toUpperCase()}</span>
+            <svg
+              className="compact-language-chevron"
+              viewBox="0 0 12 12"
+              aria-hidden="true"
+            >
+              <path d="m3 4.5 3 3 3-3" />
+            </svg>
+          </>
+        ) : (
+          <>
+            <span className="language-globe">文</span>
+            {selectedLanguage[1]}
+            <span aria-hidden="true">⌄</span>
+          </>
+        )}
       </button>
       {open && (
         <div
@@ -168,7 +199,11 @@ export default function LanguageSelector({ placement = "footer" }: { placement?:
           </div>
         </div>
       )}
-      {error && <span className="language-error" role="status">{error}</span>}
+      {error && (
+        <span className="language-error" role="status">
+          {error}
+        </span>
+      )}
     </div>
   )
 }

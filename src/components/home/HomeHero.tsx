@@ -42,8 +42,9 @@ export default function HomeHero() {
       </div>
       <div className="hero-sequence" aria-label="Research to growth sequence">
         {["Research", "Understanding", "Insight", "Decision", "Growth"].map(
-          (step) => (
+          (step, index) => (
             <span key={step}>
+              <b>0{index + 1}</b>
               {step}
             </span>
           ),

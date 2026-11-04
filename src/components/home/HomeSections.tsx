@@ -12,8 +12,9 @@ export function TrustStrip() {
   return (
     <section className="trust-strip-wrap" aria-label="NexGen strengths">
       <div className="trust-strip">
-        {strengths.map(({ value, label, icon }) => (
+        {strengths.map(({ value, label, icon }, index) => (
           <div key={value} className="strength-card">
+            <span className="strength-index">0{index + 1} / NexGen</span>
             <span className="trust-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d={icon} />
@@ -53,7 +54,7 @@ export function EditorialStatement() {
         <div className="statement-dots" aria-hidden="true" />
       </div>
       <div className="statement-content">
-        <span className="eyebrow">About NexGen</span>
+        <span className="eyebrow">01 / About NexGen</span>
         <h2>
           Understand. <span>Interpret.</span> Decide.
         </h2>
@@ -79,7 +80,7 @@ export function SolutionsPreview() {
   return (
     <section className="solutions-section">
       <SectionHeader
-        label="Capabilities"
+        label="02 / Capabilities"
         title="Research solutions"
         body="Begin with the business question, then design the right research system around it."
       />
@@ -124,13 +125,14 @@ export function MethodologyPreview() {
   return (
     <section className="methods-section">
       <SectionHeader
-        label="Methodologies"
+        label="03 / Methodologies"
         title="Research without methodological boundaries"
         body="Method follows the question. Move between depth, scale and integration without losing sight of the decision."
       />
       <div className="home-method-grid">
-        {methodologies.slice(0, 6).map((item) => (
+        {methodologies.slice(0, 6).map((item, index) => (
           <Link to={item.path} key={item.path}>
+            <span>0{index + 1}</span>
             <h3>{item.title}</h3>
             <p>{item.theme}</p>
             <span className="method-card-action">Explore method</span>
@@ -154,7 +156,7 @@ export function IndiaQuality() {
           />
         </div>
         <div className="reach-copy">
-          <span className="eyebrow">India + international execution</span>
+          <span className="eyebrow">06 / India + international execution</span>
           <h2>One India. Thousands of different consumer realities.</h2>
           <p>
             Access across major metros, Tier II and Tier III cities, semi-urban
@@ -188,7 +190,7 @@ export function ResearchInAction() {
   return (
     <section className="industries-section">
       <SectionHeader
-        label="Industries"
+        label="04 / Industries"
         title="Research shaped by your industry"
         body="Different sectors require different stakeholder access, language, imagery and evidence."
       />
@@ -218,7 +220,7 @@ export function ResearchSupport() {
       aria-labelledby="research-support-heading"
     >
       <div>
-        <span className="eyebrow">Data & research support</span>
+        <span className="eyebrow">05 / Data & research support</span>
         <h2 id="research-support-heading">
           From research design to reliable execution.
         </h2>
@@ -253,7 +255,7 @@ export function KnowledgePreview() {
   return (
     <section className="knowledge-section">
       <div className="knowledge-title">
-        <span className="eyebrow">Knowledge hub</span>
+        <span className="eyebrow">07 / Knowledge hub</span>
         <h2>Ideas, evidence and perspectives from the world of research</h2>
       </div>
       <div className="article-grid">

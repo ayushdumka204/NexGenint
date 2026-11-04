@@ -43,8 +43,9 @@ export default function QualityPage() {
         </div>
       </section>
       <section className="qms-machine">
-        {steps.map((item) => (
+        {steps.map((item, index) => (
           <div key={item}>
+            <span>{String(index + 1).padStart(2, "0")}</span>
             <strong>{item}</strong>
             <i>Verified hand-off</i>
           </div>

@@ -1,10 +1,9 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { useLocation } from "react-router"
 
 export default function ScrollEffects() {
   const { pathname } = useLocation()
   const progressRef = useRef<HTMLDivElement>(null)
-  const [activeStep, setActiveStep] = useState(1)
 
   useEffect(() => {
     const registered = new WeakSet<HTMLElement>()
@@ -39,14 +38,13 @@ export default function ScrollEffects() {
         .querySelectorAll<HTMLImageElement>("main img")
         .forEach((image) => image.classList.add("image-reveal"))
     }
-    const frame = requestAnimationFrame(register)
+    register()
     const mutations = new MutationObserver(register)
     const content = document.getElementById("main-content")
     if (content) mutations.observe(content, { childList: true, subtree: true })
     return () => {
       observer.disconnect()
       mutations.disconnect()
-      cancelAnimationFrame(frame)
     }
   }, [pathname])
 
@@ -57,7 +55,6 @@ export default function ScrollEffects() {
       const progress = max > 0 ? window.scrollY / max : 0
       if (progressRef.current)
         progressRef.current.style.transform = `scaleY(${progress})`
-      setActiveStep(Math.min(5, Math.floor(progress * 5) + 1))
       frame = 0
     }
     const scroll = () => {
@@ -71,34 +68,9 @@ export default function ScrollEffects() {
     }
   }, [])
 
-  const scrollToStep = (step: number) => {
-    const max = document.documentElement.scrollHeight - window.innerHeight
-    const target = max * ((step - 1) / 4)
-    window.scrollTo({
-      top: target,
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "instant"
-        : "smooth",
-    })
-  }
-
   return (
-    <nav className="side-scroll-progress" aria-label="Page progress">
+    <div className="side-scroll-progress" aria-hidden="true">
       <div ref={progressRef} />
-      <div className="side-scroll-steps">
-        {[1, 2, 3, 4, 5].map((step) => (
-          <button
-            key={step}
-            className={activeStep === step ? "is-active" : undefined}
-            type="button"
-            aria-label={`Go to page section ${step}`}
-            aria-current={activeStep === step ? "step" : undefined}
-            onClick={() => scrollToStep(step)}
-          >
-            {step}
-          </button>
-        ))}
-      </div>
-    </nav>
+    </div>
   )
 }

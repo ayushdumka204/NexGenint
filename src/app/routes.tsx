@@ -1,58 +1,26 @@
 import { createBrowserRouter, Navigate } from "react-router"
 import RootLayout from "@/components/layout/RootLayout"
 import HomePage from "@/pages/HomePage"
-import ContactPage from "@/pages/ContactPage"
-import ErrorPage from "@/pages/ErrorPage"
-import ProposalPage from "@/pages/ProposalPage"
 import CollectionPage from "@/pages/CollectionPage"
+import NotFoundPage from "@/pages/NotFoundPage"
+import ErrorPage from "@/pages/ErrorPage"
 import {
   academic,
+  caseStudies,
   fieldwork,
+  guides,
   industries,
   methodologies,
+  reports,
+  resources,
   solutions,
 } from "@/data/catalog"
-import AboutPage from "@/pages/company/AboutPage"
-import CareersPage from "@/pages/company/CareersPage"
-import LeadershipPage from "@/pages/company/LeadershipPage"
-import NetworkPage from "@/pages/company/NetworkPage"
-import QualityPage from "@/pages/company/QualityPage"
-import WhyNexGenPage from "@/pages/company/WhyNexGenPage"
-import SuccessStoriesPage from "@/pages/resources/SuccessStoriesPage"
-import InsightsPage from "@/pages/resources/InsightsPage"
-import ReportsPage from "@/pages/resources/ReportsPage"
-import GuidesPage from "@/pages/resources/GuidesPage"
-import {
-  AcademicRoute,
-  ArticleRoute,
-  CaseStudyRoute,
-  FieldworkRoute,
-  GuideRoute,
-  IndustryRoute,
-  MethodologyRoute,
-  ReportRoute,
-  SolutionRoute,
-} from "@/app/ContentRoutes"
-import NotFoundPage from "@/pages/NotFoundPage"
 
-const collectionRoute = (
-  title: string,
-  eyebrow: string,
-  description: string,
-  entries: typeof solutions,
-  path: string,
-) => ({
-  path,
-  element: (
-    <CollectionPage
-      title={title}
-      eyebrow={eyebrow}
-      description={description}
-      entries={entries}
-      path={path}
-    />
-  ),
-})
+const lazyDefault =
+  (load: () => Promise<{ default: React.ComponentType }>) => async () => ({
+    Component: (await load()).default,
+  })
+const contentRoute = async () => import("@/app/ContentRoutes")
 
 export const router = createBrowserRouter([
   {
@@ -61,63 +29,169 @@ export const router = createBrowserRouter([
     ErrorBoundary: ErrorPage,
     children: [
       { index: true, Component: HomePage },
-      { path: "contact", Component: ContactPage },
-      { path: "request-proposal", Component: ProposalPage },
-      collectionRoute(
-        "Business solutions",
-        "Solutions / What we solve",
-        "Evidence designed around the decisions you need to make.",
-        solutions,
-        "/solutions",
-      ),
-      { path: "solutions/:slug", Component: SolutionRoute },
-      collectionRoute(
-        "Research methodologies",
-        "Methodologies / How we learn",
-        "Research methods selected for the question, audience and evidence required.",
-        methodologies,
-        "/methodologies",
-      ),
-      { path: "methodologies/:slug", Component: MethodologyRoute },
-      collectionRoute(
-        "Industry research",
-        "Industries / Where we work",
-        "Sector fluency across complex consumer and professional markets.",
-        industries,
-        "/industries",
-      ),
-      { path: "industries/:slug", Component: IndustryRoute },
-      collectionRoute(
-        "Data & fieldwork",
-        "Data & Fieldwork / How we execute",
-        "Reliable execution from recruitment to final dataset.",
-        fieldwork,
-        "/data-fieldwork",
-      ),
-      { path: "data-fieldwork/:slug", Component: FieldworkRoute },
-      collectionRoute(
-        "Academic research",
-        "Academic Research / Rigour in practice",
-        "Professional data and execution support for academic rigour.",
-        academic,
-        "/academic-research",
-      ),
-      { path: "academic-research/:slug", Component: AcademicRoute },
-      { path: "resources", element: <Navigate to="/resources/insights" replace /> },
-      { path: "resources/success-stories", Component: SuccessStoriesPage },
-      { path: "resources/success-stories/:slug", Component: CaseStudyRoute },
-      { path: "resources/insights", Component: InsightsPage },
-      { path: "resources/insights/:slug", Component: ArticleRoute },
-      { path: "resources/reports", Component: ReportsPage },
-      { path: "resources/reports/:slug", Component: ReportRoute },
-      { path: "resources/research-guides", Component: GuidesPage },
-      { path: "resources/research-guides/:slug", Component: GuideRoute },
-      { path: "company/about", Component: AboutPage },
-      { path: "company/leadership", Component: LeadershipPage },
-      { path: "company/why-nexgen", Component: WhyNexGenPage },
-      { path: "company/pan-india-network", Component: NetworkPage },
-      { path: "company/quality", Component: QualityPage },
-      { path: "company/careers", Component: CareersPage },
+      {
+        path: "solutions",
+        element: (
+          <CollectionPage
+            title="Research Solutions"
+            eyebrow="What NexGen can help solve"
+            description="Business-focused research capabilities designed around the decision at stake."
+            entries={solutions}
+            path="/solutions"
+          />
+        ),
+      },
+      {
+        path: "solutions/:slug",
+        lazy: async () => ({ Component: (await contentRoute()).SolutionRoute }),
+      },
+      {
+        path: "methodologies",
+        element: (
+          <CollectionPage
+            title="Research Methodologies"
+            eyebrow="How NexGen conducts research"
+            description="Technical and human methods selected for the question, audience and evidence required."
+            entries={methodologies}
+            path="/methodologies"
+          />
+        ),
+      },
+      {
+        path: "methodologies/:slug",
+        lazy: async () => ({
+          Component: (await contentRoute()).MethodologyRoute,
+        }),
+      },
+      {
+        path: "industries",
+        element: (
+          <CollectionPage
+            title="Industry Expertise"
+            eyebrow="Sector context"
+            description="Research grounded in the stakeholders, channels and decisions shaping each industry."
+            entries={industries}
+            path="/industries"
+          />
+        ),
+      },
+      {
+        path: "industries/:slug",
+        lazy: async () => ({ Component: (await contentRoute()).IndustryRoute }),
+      },
+      {
+        path: "data-fieldwork",
+        element: (
+          <CollectionPage
+            title="Data & Fieldwork"
+            eyebrow="People + process + technology"
+            description="Operational research capability from recruitment and programming to validation and delivery."
+            entries={fieldwork}
+            path="/data-fieldwork"
+          />
+        ),
+      },
+      {
+        path: "data-fieldwork/:slug",
+        lazy: async () => ({
+          Component: (await contentRoute()).FieldworkRoute,
+        }),
+      },
+      {
+        path: "academic-research",
+        element: (
+          <CollectionPage
+            title="Academic Research"
+            eyebrow="Evidence for scholarship"
+            description="Professional primary-data collection and research execution for researchers, universities, faculty and PhD scholars."
+            entries={academic}
+            path="/academic-research"
+          />
+        ),
+      },
+      {
+        path: "academic-research/:slug",
+        lazy: async () => ({ Component: (await contentRoute()).AcademicRoute }),
+      },
+      {
+        path: "resources",
+        element: (
+          <CollectionPage
+            title="Research Resources"
+            eyebrow="Evidence + perspective + education"
+            description="Move between research in action, expert perspectives, illustrative reports and practical guides."
+            entries={[...caseStudies, ...resources, ...reports, ...guides]}
+            path="/resources"
+          />
+        ),
+      },
+      {
+        path: "resources/success-stories",
+        lazy: lazyDefault(() => import("@/pages/resources/SuccessStoriesPage")),
+      },
+      {
+        path: "resources/success-stories/:slug",
+        lazy: async () => ({
+          Component: (await contentRoute()).CaseStudyRoute,
+        }),
+      },
+      {
+        path: "resources/insights",
+        lazy: lazyDefault(() => import("@/pages/resources/InsightsPage")),
+      },
+      {
+        path: "resources/insights/:slug",
+        lazy: async () => ({ Component: (await contentRoute()).ArticleRoute }),
+      },
+      {
+        path: "resources/reports",
+        lazy: lazyDefault(() => import("@/pages/resources/ReportsPage")),
+      },
+      {
+        path: "resources/reports/:slug",
+        lazy: async () => ({ Component: (await contentRoute()).ReportRoute }),
+      },
+      {
+        path: "resources/research-guides",
+        lazy: lazyDefault(() => import("@/pages/resources/GuidesPage")),
+      },
+      {
+        path: "resources/research-guides/:slug",
+        lazy: async () => ({ Component: (await contentRoute()).GuideRoute }),
+      },
+      {
+        path: "company/about",
+        lazy: lazyDefault(() => import("@/pages/company/AboutPage")),
+      },
+      { path: "company", element: <Navigate to="/company/about" replace /> },
+      {
+        path: "company/leadership",
+        lazy: lazyDefault(() => import("@/pages/company/LeadershipPage")),
+      },
+      {
+        path: "company/why-nexgen",
+        lazy: lazyDefault(() => import("@/pages/company/WhyNexGenPage")),
+      },
+      {
+        path: "company/pan-india-network",
+        lazy: lazyDefault(() => import("@/pages/company/NetworkPage")),
+      },
+      {
+        path: "company/quality",
+        lazy: lazyDefault(() => import("@/pages/company/QualityPage")),
+      },
+      {
+        path: "company/careers",
+        lazy: lazyDefault(() => import("@/pages/company/CareersPage")),
+      },
+      {
+        path: "contact",
+        lazy: lazyDefault(() => import("@/pages/ContactPage")),
+      },
+      {
+        path: "request-proposal",
+        lazy: lazyDefault(() => import("@/pages/ProposalPage")),
+      },
       { path: "*", Component: NotFoundPage },
     ],
   },
