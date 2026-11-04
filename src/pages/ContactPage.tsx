@@ -69,21 +69,24 @@ const metrics = [
   ["60,000", "Hospitals in Our Database"],
 ] as const
 
+const publicAsset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`
+
 const certifications = [
   {
-    image: "/certifications/iso-9001-2015.png",
+    image: publicAsset("certifications/iso-9001-2015.png"),
     alt: "ISO 9001:2015 mark",
     title: "ISO 9001:2015",
     text: "Quality management for market research and public opinion polling.",
   },
   {
-    image: "/certifications/q2a-uk.png",
+    image: publicAsset("certifications/q2a-uk.png"),
     alt: "Q2A-UK Certification Board mark",
     title: "Q2A-UK Certification Board",
     text: "Third-party certification of the quality management system.",
   },
   {
-    image: "/certifications/dpdp-act-2023.png",
+    image: publicAsset("certifications/dpdp-act-2023.png"),
     alt: "Digital Personal Data Protection Act 2023 mark",
     title: "DPDP Act 2023",
     text: "Consent, data handling and retention aligned with India's Digital Personal Data Protection Act.",
@@ -601,7 +604,7 @@ export default function ContactUs() {
               </p>
               <a
                 className="ng-outline-button"
-                href="/certifications/nexgen-iso-9001-certificate.png"
+                href={publicAsset("certifications/nexgen-iso-9001-certificate.png")}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -612,7 +615,7 @@ export default function ContactUs() {
             <figure className="ng-certificate-figure">
               <div className="ng-certificate-placeholder">
                 <img
-                  src="/certifications/nexgen-iso-9001-certificate.png"
+                  src={publicAsset("certifications/nexgen-iso-9001-certificate.png")}
                   alt="NexGen Market Research Services ISO 9001:2015 certificate"
                 />
               </div>
